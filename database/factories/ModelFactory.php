@@ -19,3 +19,21 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Stock\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+        'description' => $faker->paragraph(),
+        'image_path' => 'default.jpg',
+    ];
+});
+
+$factory->define(App\Stock\Product::class, function (Faker\Generator $faker) {
+    return [
+        'category_id' => 1,
+        'name' => $faker->words(3, true),
+        'description' => $faker->paragraph(),
+        'quantity' => $faker->numberBetween(1, 24),
+        'image_path' => 'default.jpg',
+    ];
+});

@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Auth;
 
 class UsersTest extends TestCase {
 
@@ -102,5 +103,26 @@ class UsersTest extends TestCase {
         $this->call('DELETE', '/admin/users/'.$user1->id);
 
         $this->seeInDatabase('users', $user1->toArray());
+    }
+
+    /**
+     * @test
+     */
+    public function it_lets_a_user_reset_their_password()
+    {
+        $user1 = factory('App\User')->create(['password' => 'password']);
+
+        $this->actingAs($user1)
+            ->visit('/admin/resetpassword')
+            ->type('password', 'current_password')
+            ->type('morris23', 'password')
+            ->type('morris23', 'password_confirmation')
+            ->press('Reset');
+
+        Auth::logout();
+
+        $success = Auth::attempt(['email' => $user1->email, 'password' => 'morris23']);
+
+        $this->assertTrue($success, 'Cant authenticate');
     }
 }
