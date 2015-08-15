@@ -13,6 +13,16 @@
 
 Route::get('/', 'PagesController@home');
 
+Route::get('checkout', 'PagesController@showCheckout');
+Route::post('checkout', 'PagesController@handleCheckout');
+
+Route::get('cart/contents/{timestamp}', 'CartController@getContents');
+Route::get('cart/destroy', 'CartController@destroy');
+Route::get('cart/add/{itemId}', 'CartController@add');
+Route::get('cart/remove/{itemId}', 'CartController@remove');
+
+Route::post('logouploads', 'LogoUploadController@storeLogo');
+
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
@@ -20,6 +30,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::get('/', 'PagesController@dashboard');
 
         Route::get('logout', 'AuthController@doLogout');
+
+        Route::post('uploads/productimg', 'AjaxImageUploadsController@store');
 
         Route::get('users', 'UsersController@index');
         Route::get('resetpassword', 'UsersController@showResetPassword');
@@ -36,11 +48,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::post('categories/{id}', 'CategoriesController@update');
         Route::delete('categories/{id}', 'CategoriesController@delete');
 
+        Route::get('products', 'ProductsController@index');
         Route::get('products/create', 'ProductsController@create');
         Route::post('products', 'ProductsController@store');
         Route::get('products/{id}/edit', 'ProductsController@edit');
         Route::post('products/{id}', 'ProductsController@update');
         Route::delete('products/{id}', 'ProductsController@delete');
+
+        Route::get('quoterequests', 'QuoteRequestsController@index');
+        Route::get('quoterequests/{id}', 'QuoteRequestsController@show');
 
     });
 

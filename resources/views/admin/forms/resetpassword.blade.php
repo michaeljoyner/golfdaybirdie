@@ -12,6 +12,6 @@
     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-    <button type="submit" class="btn">Reset</button>
+    <button type="submit" class="btn gbb-btn">Reset</button>
 </div>
 {!! Form::close() !!}

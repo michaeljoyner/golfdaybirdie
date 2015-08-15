@@ -3,6 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-7">
+            <h1>Users</h1>
             @foreach($users as $user)
                 @include('admin.users.partials.usercard', ['user' => $user])
             @endforeach
@@ -18,4 +19,5 @@
 
 @section('bodyscripts')
     @include('admin.partials.modalscript')
+    @include('admin.partials.flash')
 @endsection

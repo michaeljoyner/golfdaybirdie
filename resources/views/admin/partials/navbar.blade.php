@@ -7,25 +7,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">GolfBallBranding</a>
+            <a class="navbar-brand" href="/">GolfBallBranding</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/admin">Home</a></li>
-                <li class="dropdown">
+                <li @if(Request::path() === 'admin') class="active" @endif ><a href="/admin">Home</a></li>
+                <li @if(starts_with(Request::path(), 'admin/products')) class="active" @endif  class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/admin/products">View all</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="/admin/products/create">Add a Product</a></li>
                     </ul>
                 </li>
-                <li><a href="#about">Quote Requests</a></li>
-                <li><a href="/admin/users">Users</a></li>
+                <li @if(starts_with(Request::path(), 'admin/quoterequests')) class="active" @endif ><a href="/admin/quoterequests">Quote Requests</a></li>
+                <li @if(starts_with(Request::path(), 'admin/users')) class="active" @endif><a href="/admin/users">Users</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

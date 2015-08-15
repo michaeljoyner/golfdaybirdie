@@ -6,14 +6,14 @@
                 <h4 class="modal-title">Confirm deletion</h4>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to delete <span class="users-name">this user</span>?</p>
+                <p>Are you sure you want to delete <span class="object-name">this user</span>?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn gbb-btn btn-blue" data-dismiss="modal">Cancel</button>
                 <form method="POST" action="" class="delete-form">
                     <input type="hidden" name="_method" value="DELETE"/>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                    <input type="submit" class="btn btn-danger btn-large" value="Delete"/>
+                    <input type="submit" class="btn gbb-btn" value="Delete"/>
                 </form>
             </div>
         </div><!-- /.modal-content -->

@@ -1,0 +1,20 @@
+.product-box {
+  margin-bottom: 50px;
+  padding: 20px;
+
+  img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .product-title {
+    margin-top: 30px;
+    text-transform: uppercase;
+  }
+
+  .action-center {
+    padding-right: 50px;
+  }
+}

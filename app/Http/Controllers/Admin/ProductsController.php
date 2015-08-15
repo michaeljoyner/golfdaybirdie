@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\FlashMessages\Flasher;
 use App\Http\Requests\ProductFormRequest;
 use App\Stock\Category;
 use App\Stock\Product;
@@ -12,6 +13,23 @@ use App\Http\Controllers\Controller;
 
 class ProductsController extends Controller
 {
+    /**
+     * @var Flasher
+     */
+    private $flasher;
+
+    public function __construct(Flasher $flasher)
+    {
+        $this->flasher = $flasher;
+    }
+
+    public function index()
+    {
+        $products = Product::all();
+
+        return view('admin.products.index')->with(compact('products'));
+    }
+
     public function create()
     {
         $product = new Product();
@@ -25,7 +43,9 @@ class ProductsController extends Controller
 
         $category->products()->create($request->all());
 
-        return redirect()->to('/admin');
+        $this->flasher->success('Product Added', 'Growth and expansion - good signs');
+
+        return redirect()->to('/admin/products');
     }
 
     public function edit($id)
@@ -41,7 +61,9 @@ class ProductsController extends Controller
 
         $product->update($request->all());
 
-        return redirect()->to('/admin');
+        $this->flasher->success('Product Updated', 'Good job, applaud yourself.');
+
+        return redirect()->to('/admin/products');
     }
 
     public function delete($id)
@@ -50,7 +72,9 @@ class ProductsController extends Controller
 
         $product->delete();
 
-        return redirect()->to('/admin');
+        $this->flasher->success('Product Deleted', 'What comes must eventually go. This is the circle of life');
+
+        return redirect()->to('/admin/products');
     }
 
     /**

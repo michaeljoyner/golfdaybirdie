@@ -1,3 +1,16 @@
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+$navbar-inverse-bg: #DA3231;
+$navbar-inverse-color: #ffffff;
+$navbar-inverse-link-color: #ffffff;
 
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "variables/colours";
 @import "partials/general";
+@import "partials/dropzonepreview";
+@import "partials/dropzone";
+@import "partials/buttons";
+@import "admin/partials/pageheader";
+@import "admin/partials/productbox";
+@import "admin/partials/usercard";
+@import "admin/partials/quotepreview";
+@import "admin/partials/quoterequest";
+

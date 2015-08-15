@@ -1,0 +1,25 @@
+.quote-request-body {
+
+  .label-text {
+    color: lighten($primary_red, 10%);
+    font-weight: 700;
+  }
+
+  .quote-request-logo-gallery {
+
+    .logo-box {
+      display: inline-block;
+      width: 200px;
+      margin: 10px 20px;
+      text-align: center;
+
+      img {
+        max-width: 90%;
+        width: 90%;
+        height: auto;
+        display: block;
+        margin: 0 auto 10px;
+      }
+    }
+  }
+}

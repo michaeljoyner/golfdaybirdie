@@ -31,7 +31,7 @@
 
     <div class="form-group">
         <div class="col-md-12">
-            <button type="submit" class="btn prompt-button form-control">
+            <button type="submit" class="btn prompt-button gbb-btn form-control">
                 Register User
             </button>
         </div>

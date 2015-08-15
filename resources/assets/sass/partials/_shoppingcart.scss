@@ -1,0 +1,132 @@
+#thecart {
+  width: 80px;
+  height: 60px;
+  position: relative;
+  top: -20px;
+  z-index: 100;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+#thecart.fixit {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 80px;
+
+  label {
+    background-image: url(../../images/shoppingcartcircle.png);
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  .cart-box {
+    top: 85px;
+  }
+}
+
+#cart-item-count {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  font-family: Helvetica, Ariel, sans-serif;
+  background: $primary_blue;
+}
+
+#thecart label {
+  color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../images/shoppingcart.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.cart-box {
+  position: absolute;
+  top: 65px;
+  right: 0;
+  width: 26em;
+  background: #333;
+  border-radius: 10px;
+  opacity: 0;
+  display: none;
+  transition: 1s;
+  padding: 10px;
+}
+
+.cart-box a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  float: right;
+  color: white;
+  padding: 6px;
+  background-color: #333;
+  border: none;
+  margin-top: 20px;
+}
+
+
+
+#list-control {
+  display: none;
+}
+
+#list-control:checked + .cart-box {
+  opacity: 1;
+  display: block;
+}
+
+
+.cart-list {
+  list-style-type: none;
+  transition: 1s;
+  padding: 0;
+}
+
+.cart-list li {
+  font-family: Helvetica, Ariel, sans-serif;
+  position: relative;
+  padding: 5px;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+  color: #ffffff;
+  margin-bottom: 3px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.cart-list li .remove-item-btn {
+  display: inline-block;
+  float: right;
+  background: orangered;
+  color: #ffffff;
+  font-family: Helvetica, Ariel, sans-serif;
+  height: 18px;
+  font-size: 12px;
+  padding: 2px 6px;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.product-btn.added {
+  background: $primary_blue;
+  color: #ffffff;
+}
+
+#empty-cart-warning {
+  color: $primary_red;
+}
