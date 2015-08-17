@@ -12,7 +12,7 @@
     @include('front.partials.header')
     @include('front.partials.navbar')
     <div class="w-section hero">
-        <h1 class="sectionheading">HOW&nbsp;IT&nbsp;WORKS</h1>
+        <h1 class="sectionheading">HOW IT WORKS</h1>
         <div class="w-container productscontainer">
             <div class="w-row">
                 <div class="w-col w-col-4 stepcolumn first-step">
@@ -42,9 +42,9 @@
     <div id="delivery-section" class="w-section deliversection">
         <h1 class="sectionheading">DELIVERY</h1>
         <div class="w-container delivercontainer">
-            <p class="deliverytext">WE&nbsp;DELIVER&nbsp;THROUGHOUT SOUTHERN&nbsp;AFRICA.
+            <p class="deliverytext">WE DELIVER THROUGHOUT SOUTHERN AFRICA.
                 <br>
-                <br>PLEASE&nbsp;<a class="hyperlink" href="#">CONTACT&nbsp;US</a>&nbsp;WITH&nbsp;ANY&nbsp;ENQUIRIES.</p><img class="deliveryimage" src="images/homepage/africamap.png">
+                <br>PLEASE <a class="hyperlink" href="#">CONTACT US</a> WITH ANY ENQUIRIES.</p><img class="deliveryimage" src="images/homepage/africamap.png">
         </div>
     </div>
     @include('front.partials.contact')

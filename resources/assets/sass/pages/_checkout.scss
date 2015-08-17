@@ -28,6 +28,19 @@
       margin: 10px;
     }
 
+    span {
+      @include respond-to(phone) {vertical-align: top;
+        padding-top: 10px;
+        display: inline-block;
+        font-size: 10pt;
+        max-width: 40%;}
+      @include respond-to(smalltablet) {vertical-align: top;
+        padding-top: 10px;
+        display: inline-block;
+        font-size: 10pt;
+        max-width: 40%;}
+    }
+
     .select-container {
       font-size: 16px;
       position: relative;
@@ -115,10 +128,17 @@
       display: inline-block;
       width: 49.5%;
       text-align: center;
+
+      @include respond-to(phone) {width: 49%;}
+      @include respond-to(smalltablet) {width: 49%;}
+
     }
 
     input[type=checkbox] {
       font-size: xx-large;
+      @include respond-to(phone) {display: block; margin: 0 auto;}
+      @include respond-to(smalltablet) {display: block; margin: 0 auto;}
+
     }
 
     span {

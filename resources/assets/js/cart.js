@@ -115,7 +115,7 @@
         },
 
         addItemToList: function(item) {
-            var li = createElement('li', item.name, [{key: 'class', value: 'cart-list-item'}]);
+            var li = createElement('li', '<span>' +item.name + '</span>', [{key: 'class', value: 'cart-list-item'}]);
             var removeButton = createElement('div', 'remove', [{key: 'data-item-id', value: item.id}, {key: 'class', value: 'remove-item-btn'}]);
             li.appendChild(removeButton);
             this.elems.cartList.appendChild(li);

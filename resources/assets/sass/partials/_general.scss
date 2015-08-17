@@ -10,3 +10,9 @@ a, a:visited, a:active, a:focus {
 .delete-form {
   display: inline-block;
 }
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}

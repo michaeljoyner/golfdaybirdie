@@ -1846,6 +1846,12 @@ h1 {
   line-height: 44px;
   font-weight: 800;
   text-align: center; }
+  @media only screen and (max-width: 413px) {
+    h1 {
+      font-size: 30px; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    h1 {
+      font-size: 30px; } }
 
 h2 {
   margin-top: 20px;
@@ -1923,6 +1929,12 @@ a:hover {
   background-color: #da3231;
   font-size: 18px;
   text-transform: uppercase; }
+  @media only screen and (max-width: 413px) {
+    .button.product {
+      float: right; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .button.product {
+      float: right; } }
 
 .button.product:hover {
   padding-top: 2px;
@@ -1938,7 +1950,8 @@ a:hover {
   display: block;
   margin: 20px auto;
   float: none;
-  text-align: left; }
+  text-align: left;
+  padding: 0 10px; }
 
 .hero {
   margin-top: 0px;
@@ -1957,6 +1970,12 @@ a:hover {
   float: none;
   text-align: center;
   list-style-type: none; }
+  @media only screen and (max-width: 413px) {
+    .navlist {
+      padding-top: 0; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .navlist {
+      padding-top: 0; } }
 
 .navlink {
   display: inline-block;
@@ -1964,6 +1983,19 @@ a:hover {
   padding: 5px 40px;
   list-style-type: none;
   vertical-align: top; }
+  @media only screen and (max-width: 413px) {
+    .navlink {
+      margin: 15px;
+      display: block; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .navlink {
+      margin: 15px;
+      display: block; } }
+  @media only screen and (min-width: 606px) and (max-width: 900px) {
+    .navlink {
+      padding: 0;
+      margin: 0;
+      width: 24.5%; } }
 
 .navlink:hover {
   border-color: #db4c38;
@@ -1974,11 +2006,23 @@ a:hover {
 
 .navlink.cart {
   border-style: none; }
+  @media only screen and (max-width: 413px) {
+    .navlink.cart {
+      padding: 0; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .navlink.cart {
+      padding: 0; } }
 
 .navbar {
   height: 150px;
   border-bottom: 10px solid #db4c38;
   background-color: white; }
+  @media only screen and (max-width: 413px) {
+    .navbar {
+      height: auto; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .navbar {
+      height: auto; } }
 
 .stepdiv {
   overflow-x: visible;
@@ -1993,6 +2037,12 @@ a:hover {
   margin-right: auto;
   margin-left: auto;
   text-align: left; }
+  @media only screen and (max-width: 413px) {
+    .stepimage {
+      width: 52%; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .stepimage {
+      width: 52%; } }
 
 .steptext {
   width: 100%;
@@ -2003,6 +2053,18 @@ a:hover {
   font-weight: 700;
   letter-spacing: 1px;
   list-style-type: none; }
+  @media only screen and (max-width: 413px) {
+    .steptext {
+      font-size: 20px;
+      line-height: 30px; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .steptext {
+      font-size: 20px;
+      line-height: 30px; } }
+  @media only screen and (min-width: 606px) and (max-width: 900px) {
+    .steptext {
+      font-size: 24px;
+      line-height: 32px; } }
 
 .stepcolumn {
   margin: 0px;
@@ -2016,6 +2078,18 @@ a:hover {
     color: #747575;
     font-weight: 800;
     font-size: 32pt; }
+    @media only screen and (max-width: 413px) {
+      .stepcolumn.first-step::after {
+        top: 100%;
+        right: 0;
+        left: 0;
+        text-align: center; } }
+    @media only screen and (min-width: 414px) and (max-width: 605px) {
+      .stepcolumn.first-step::after {
+        top: 100%;
+        right: 0;
+        left: 0;
+        text-align: center; } }
   .stepcolumn.last-step::before {
     content: '=';
     position: absolute;
@@ -2024,6 +2098,18 @@ a:hover {
     color: #747575;
     font-weight: 800;
     font-size: 32pt; }
+    @media only screen and (max-width: 413px) {
+      .stepcolumn.last-step::before {
+        top: -6px;
+        right: 0;
+        left: 0;
+        text-align: center; } }
+    @media only screen and (min-width: 414px) and (max-width: 605px) {
+      .stepcolumn.last-step::before {
+        top: -6px;
+        right: 0;
+        left: 0;
+        text-align: center; } }
 
 .golfborder {
   height: 15px;
@@ -2035,6 +2121,18 @@ a:hover {
   width: 70%;
   margin-right: auto;
   margin-left: auto; }
+  @media only screen and (max-width: 413px) {
+    .productimage {
+      width: 25%;
+      height: auto;
+      float: left;
+      padding-top: 16px; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .productimage {
+      width: 25%;
+      height: auto;
+      float: left;
+      padding-top: 16px; } }
 
 .producttext {
   padding-bottom: 9px;
@@ -2042,7 +2140,16 @@ a:hover {
   color: #2d3638;
   font-size: 14px;
   font-weight: 700;
-  text-align: center; }
+  text-align: center;
+  padding-top: 10px; }
+  @media only screen and (max-width: 413px) {
+    .producttext {
+      width: 70%;
+      float: right; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .producttext {
+      width: 70%;
+      float: right; } }
 
 .productdiv {
   padding-right: 1px;
@@ -2057,6 +2164,12 @@ a:hover {
 .productrow {
   padding-top: 20px;
   padding-bottom: 20px; }
+  @media only screen and (max-width: 413px) {
+    .productrow {
+      padding: 0; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .productrow {
+      padding: 0; } }
 
 .productsheading {
   color: #2d3638;
@@ -2065,7 +2178,8 @@ a:hover {
 .deliversection {
   margin-top: 50px;
   margin-bottom: 50px;
-  border-bottom: 10px solid #db4c38; }
+  border-bottom: 10px solid #db4c38;
+  padding: 0 10px; }
 
 .delivercontainer {
   margin-top: 50px;
@@ -2114,6 +2228,12 @@ a:hover {
   padding-left: 25px;
   border-color: #2d3638;
   transition: all 300ms ease, all 500ms ease; }
+  @media only screen and (max-width: 413px) {
+    .linknav {
+      border-color: transparent; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .linknav {
+      border-color: transparent; } }
 
 .linknav:hover {
   border-color: #db4c38; }
@@ -2140,7 +2260,8 @@ a:hover {
   text-transform: none; }
 
 .formwrapper {
-  background-color: transparent; }
+  background-color: transparent;
+  padding: 10px; }
 
 .fieldlabel {
   padding-top: 10px;
@@ -2184,6 +2305,12 @@ a:hover {
   font-size: 17px;
   text-align: center;
   text-transform: uppercase; }
+  @media only screen and (max-width: 413px) {
+    .contacttextblock {
+      width: 90%; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .contacttextblock {
+      width: 90%; } }
 
 .contacttextblock.bottom {
   margin-top: -60px;
@@ -2191,7 +2318,8 @@ a:hover {
 
 .footerlogo {
   display: block;
-  margin: 50px auto 33px; }
+  margin: 50px auto 33px;
+  padding: 0 10px; }
 
 .footercopyright {
   margin-top: 0px;
@@ -2233,12 +2361,39 @@ a:hover {
     width: 90%;
     max-width: 200px;
     display: block;
-    margin: 0 auto; }
+    margin: 0 auto;
+    float: none; }
+  #packaging-section .producttext {
+    float: none;
+    width: 100%;
+    text-align: center; }
   #packaging-section .contacttextblock {
     width: 50%;
     padding-bottom: 40px; }
+    @media only screen and (max-width: 413px) {
+      #packaging-section .contacttextblock {
+        width: 90%; } }
+    @media only screen and (min-width: 414px) and (max-width: 605px) {
+      #packaging-section .contacttextblock {
+        width: 90%; } }
   #packaging-section .productdiv {
     margin-bottom: 40px; }
+  #packaging-section .prompt-text {
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+    clear: both;
+    background-color: #86CCEB;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    padding: 20px; }
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 /*
  * The MIT License
@@ -2550,18 +2705,42 @@ a:hover {
   z-index: 100;
   background-color: #ffffff;
   border-radius: 50%; }
+  @media only screen and (max-width: 413px) {
+    #thecart {
+      display: none; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    #thecart {
+      display: none; } }
+  @media only screen and (min-width: 606px) and (max-width: 900px) {
+    #thecart {
+      margin: 0 auto; } }
 
 #thecart.fixit {
   position: fixed;
   top: 20px;
   right: 20px;
-  height: 80px; }
+  height: 80px;
+  display: block; }
+  @media only screen and (max-width: 413px) {
+    #thecart.fixit {
+      width: 50px;
+      height: 50px; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    #thecart.fixit {
+      width: 50px;
+      height: 50px; } }
   #thecart.fixit label {
     background-image: url(../../images/shoppingcartcircle.png);
     z-index: 1000;
     cursor: pointer; }
   #thecart.fixit .cart-box {
     top: 85px; }
+    @media only screen and (max-width: 413px) {
+      #thecart.fixit .cart-box {
+        top: 55px; } }
+    @media only screen and (min-width: 414px) and (max-width: 605px) {
+      #thecart.fixit .cart-box {
+        top: 55px; } }
 
 #cart-item-count {
   width: 22px;
@@ -2601,6 +2780,14 @@ a:hover {
   display: none;
   transition: 1s;
   padding: 10px; }
+  @media only screen and (max-width: 413px) {
+    .cart-box {
+      width: 95vw;
+      right: -17px; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .cart-box {
+      width: 95vw;
+      right: -17px; } }
 
 .cart-box a {
   text-transform: uppercase;
@@ -2635,6 +2822,9 @@ a:hover {
   margin-bottom: 3px;
   text-align: left;
   text-transform: uppercase; }
+  .cart-list li span {
+    display: inline-block;
+    max-width: 75%; }
 
 .cart-list li .remove-item-btn {
   display: inline-block;
@@ -2672,7 +2862,8 @@ a:hover {
   list-style-type: none; }
 
 .uploadimagesection {
-  border-bottom: 10px solid #db4c38; }
+  border-bottom: 10px solid #db4c38;
+  padding: 0 10px; }
 
 .uploadbutton {
   display: block;
@@ -2689,6 +2880,18 @@ a:hover {
   text-align: center;
   letter-spacing: 0.5px;
   list-style-type: none; }
+  @media only screen and (max-width: 413px) {
+    .uploadbutton {
+      width: 200px;
+      height: 200px;
+      font-size: 32px;
+      line-height: 40px; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .uploadbutton {
+      width: 200px;
+      height: 200px;
+      font-size: 32px;
+      line-height: 40px; } }
 
 .uploadbutton:hover {
   background-color: #2daccc;
@@ -2702,6 +2905,14 @@ a:hover {
   line-height: 33px;
   text-align: center;
   text-transform: uppercase; }
+  @media only screen and (max-width: 413px) {
+    .uploadtext {
+      font-size: 17px;
+      line-height: 25px; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .uploadtext {
+      font-size: 17px;
+      line-height: 25px; } }
 
 .uploadcontainer {
   margin-top: 0px;
@@ -2709,7 +2920,8 @@ a:hover {
 
 .yourdeatilsform {
   margin-top: 50px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  padding: 0 10px; }
 
 .additionalinfofieldlabel {
   text-transform: uppercase; }
@@ -2749,6 +2961,20 @@ a:hover {
       width: 50px;
       height: 50px;
       margin: 10px; }
+    @media only screen and (max-width: 413px) {
+      .checkout-item-list li span {
+        vertical-align: top;
+        padding-top: 10px;
+        display: inline-block;
+        font-size: 10pt;
+        max-width: 40%; } }
+    @media only screen and (min-width: 414px) and (max-width: 605px) {
+      .checkout-item-list li span {
+        vertical-align: top;
+        padding-top: 10px;
+        display: inline-block;
+        font-size: 10pt;
+        max-width: 40%; } }
     .checkout-item-list li .select-container {
       font-size: 16px;
       position: relative;
@@ -2817,8 +3043,22 @@ a:hover {
       display: inline-block;
       width: 49.5%;
       text-align: center; }
+      @media only screen and (max-width: 413px) {
+        #checkout-form .packaging-section .w-col-6 {
+          width: 49%; } }
+      @media only screen and (min-width: 414px) and (max-width: 605px) {
+        #checkout-form .packaging-section .w-col-6 {
+          width: 49%; } }
     #checkout-form .packaging-section input[type=checkbox] {
       font-size: xx-large; }
+      @media only screen and (max-width: 413px) {
+        #checkout-form .packaging-section input[type=checkbox] {
+          display: block;
+          margin: 0 auto; } }
+      @media only screen and (min-width: 414px) and (max-width: 605px) {
+        #checkout-form .packaging-section input[type=checkbox] {
+          display: block;
+          margin: 0 auto; } }
     #checkout-form .packaging-section span {
       font-weight: 300;
       text-transform: uppercase;

@@ -15,12 +15,12 @@ elixir(function(mix) {
     mix.sass('fapp.scss', './public/css/fapp.css')
         .sass('app.scss', './public/css/app.css')
         .scripts([
+            'velocity.min.js',
             'sweetalert.min.js',
             'cart.js',
             'lodash.min.js',
             'dropzone.js',
-            'dropzonemanager.js',
-            'velocity.min.js'
+            'dropzonemanager.js'
         ], './public/js/all.js')
         .scripts([
             'cartmanager.js'

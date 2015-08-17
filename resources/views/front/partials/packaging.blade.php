@@ -13,5 +13,5 @@
             <p class="producttext">Branded Packaging Option B</p>
         </div>
     </div>
-    <div class="contacttextblock">You can select branded packaging when you checkout.</div>
+    <p class="prompt-text">You can select branded packaging when you checkout.</p>
 </div>

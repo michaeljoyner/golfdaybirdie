@@ -20,7 +20,7 @@
                 @foreach($products as $product)
                     <li>
                         <img class="checkout-item-img" src="{{ $product->smallestImageSrc() }}" alt="product image"/>
-                        <span class="checkout-iten-name">{{ $product->name }}</span>
+                        <span class="checkout-item-name">{{ $product->name }}</span>
                         <div class="select-container">
                             <span class="select-arrow"></span>
                             <select name="product_{{ $product->id }}">
