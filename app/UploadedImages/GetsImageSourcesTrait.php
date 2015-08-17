@@ -13,7 +13,7 @@ trait GetsImageSourcesTrait {
 
     public function imageSrc()
     {
-        if($this->cantResolveImagePath($this->attributes['image_path'])) {
+        if(! isset($this->attributes['image_path']) || $this->cantResolveImagePath($this->attributes['image_path'])) {
             return asset($this->fallbackImagePath);
         }
 
