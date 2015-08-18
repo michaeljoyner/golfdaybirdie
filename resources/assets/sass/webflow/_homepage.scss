@@ -248,6 +248,9 @@ a:hover {
 
 .product-image-box {
   height: 200px;
+  @include respond-to(phone) {height: auto;}
+  @include respond-to(smalltablet) {height: auto;}
+
 }
 .productimage {
   display: block;

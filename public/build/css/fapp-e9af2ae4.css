@@ -2118,6 +2118,12 @@ a:hover {
 
 .product-image-box {
   height: 200px; }
+  @media only screen and (max-width: 413px) {
+    .product-image-box {
+      height: auto; } }
+  @media only screen and (min-width: 414px) and (max-width: 605px) {
+    .product-image-box {
+      height: auto; } }
 
 .productimage {
   display: block;
