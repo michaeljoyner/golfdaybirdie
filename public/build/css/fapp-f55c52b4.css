@@ -2116,9 +2116,14 @@ a:hover {
   background-image: url("../../images/homepage/golf_small.jpg");
   background-position: 0% -37%; }
 
+.product-image-box {
+  height: 200px; }
+
 .productimage {
   display: block;
   width: 70%;
+  max-width: 100%;
+  max-height: 100%;
   margin-right: auto;
   margin-left: auto; }
   @media only screen and (max-width: 413px) {

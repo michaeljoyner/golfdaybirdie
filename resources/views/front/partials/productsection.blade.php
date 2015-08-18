@@ -6,7 +6,9 @@
                 @foreach($row as $product)
                     <div class="w-col w-col-4 productcolumn">
                         <div class="productdiv group">
-                            <img class="productimage" src="{{ $product->smallestImageSrc() }}">
+                            <div class="product-image-box">
+                                <img class="productimage" src="{{ $product->smallestImageSrc() }}">
+                            </div>
                             <p class="producttext">{{ $product->name }}</p>
                             <a id="btn_{{ $product->id }}" data-product-id="{{ $product->id }}" class="button product product-btn" href="#">ADD PRODUCT</a>
                         </div>
