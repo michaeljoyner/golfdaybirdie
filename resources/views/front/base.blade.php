@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <title>Golf Ball Branding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#DB4C38">
     @yield('head')
     <link rel="stylesheet" href="{{ elixir('css/fapp.css') }}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
