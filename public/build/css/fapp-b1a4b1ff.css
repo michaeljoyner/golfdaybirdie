@@ -2205,8 +2205,7 @@ a:hover {
   border-width: 10px 1px 1px;
   border-color: #db4c38 black black;
   background-color: #d6d6d6;
-  background-image: url("../../images/homepage/Comp_73903332.jpg");
-  background-position: 50% 140%; }
+  background-image: url("../../images/homepage/golfballbg.jpg"); }
 
 .footercontainer {
   margin-bottom: 12px; }
@@ -2340,8 +2339,13 @@ a:hover {
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 10px solid #db4c38;
-  background-image: url("../../images/homepage/Comp_73903332.jpg");
+  background-image: url("../../images/homepage/golfballbg.jpg");
   background-size: auto; }
+
+.grassstrip {
+  width: 100%;
+  height: 10px;
+  background-image: url(../../images/homepage/grassstrip.jpg); }
 
 .productscontainer {
   margin-top: 15px;
@@ -2873,7 +2877,7 @@ a:hover {
   padding: 29px 14px 42px;
   border-style: none;
   border-radius: 5px;
-  background-color: #56badb;
+  background: repeating-linear-gradient(45deg, #86CCEB, #86CCEB 10px, #b2def2 10px, #b2def2 20px);
   color: white;
   font-size: 48px;
   line-height: 64px;

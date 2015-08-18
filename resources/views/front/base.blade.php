@@ -17,9 +17,8 @@
         });
     </script>
     <script type="text/javascript" src="js/modernizr.js"></script>
-    <link rel="shortcut icon" href="{{ asset('public/favicon.ico?v=21') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('public/favicon.ico?v=21') }}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <meta name="description" content="Get your logo printed onto top of the range balls. We also do branded packaging."/>
     @include('front.partials.ogmetatags')
 </head>

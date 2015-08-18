@@ -49,7 +49,7 @@ abstract class UploadedImage {
 
     public function make($image)
     {
-        $this->originalName = $image->getClientOriginalName();
+        $this->originalName = $this->getUsableName($image->getClientOriginalName());
         $this->image = $this->imager->make($image);
         $this->imageForThumb = $this->imager->make($image);
         $this->imageForResize = $this->imager->make($image);
@@ -124,6 +124,15 @@ abstract class UploadedImage {
     protected function shouldResize()
     {
         return ($this->image->width() > $this->dimensions['main'] || $this->image->height() > $this->dimensions['main']);
+    }
+
+    protected function getUsableName($originalName)
+    {
+        if(mb_strlen($originalName) > 40) {
+            return mb_substr($originalName, -39);
+        }
+
+        return $originalName;
     }
 
 }

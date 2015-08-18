@@ -26,7 +26,13 @@
   padding: 29px 14px 42px;
   border-style: none;
   border-radius: 5px;
-  background-color: #56badb;
+  background: repeating-linear-gradient(
+                  45deg,
+                  $primary_blue,
+                  $primary_blue 10px,
+                  lighten($primary_blue, 10%) 10px,
+                  lighten($primary_blue, 10%) 20px
+  );
   color: white;
   font-size: 48px;
   line-height: 64px;

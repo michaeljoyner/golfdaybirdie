@@ -13,4 +13,11 @@ class ProductUploadedImage extends UploadedImage {
 
     protected $basePath = '/images/adminuploads/products/';
 
+    protected $dimensions = [
+        'thumb' => 250,
+        'main' => 500
+    ];
+
+
+
 }

@@ -11,6 +11,7 @@ var cartManager = {
         }
 
         window.addEventListener('scroll', cartManager.handleScroll, false);
+        window.addEventListener('touchmove', cartManager.handleScroll, false);
 
         cartManager.cart = new Cart(document.getElementById('thecart'));
         cartManager.cart.syncCart(this.syncButtons.bind(this));
