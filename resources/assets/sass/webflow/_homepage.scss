@@ -149,6 +149,7 @@ a:hover {
   @include respond-to(phone) {margin: 15px; display: block;}
   @include respond-to(smalltablet) {margin: 15px; display: block;}
   @include respond-to(largetablet) {padding: 0; margin: 0; width: 24.5%;}
+  @include respond-to(desktop) {padding: 0; margin: 0; width: 24.5%;}
 
 }
 .navlink:hover {
@@ -158,12 +159,7 @@ a:hover {
   text-transform: none;
   list-style-type: none;
 }
-.navlink.cart {
-  border-style: none;
-  @include respond-to(phone) {padding: 0;}
-  @include respond-to(smalltablet) {padding: 0;}
 
-}
 .navbar {
   height: 150px;
   border-bottom: 10px solid #db4c38;
@@ -452,6 +448,14 @@ a:hover {
 }
 .mym {
   color: white;
+
+  a {
+    color: inherit;
+    font-size: inherit;
+    border: 0;
+    text-transform: inherit;
+    font-weight: 300;
+  }
 }
 .mym:hover {
   color: #1eba9b;
@@ -514,12 +518,13 @@ a:hover {
     max-width: 600px;
     margin: 40px auto;
     clear: both;
-    background-color: $primary_blue;
-    border-radius: 8px;
-    color: #ffffff;
+    color: $primary_red;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 1.4;
     text-transform: uppercase;
-    padding: 20px;
+    padding: 10px;
   }
 }
 

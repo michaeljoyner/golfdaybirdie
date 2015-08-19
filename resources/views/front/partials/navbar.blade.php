@@ -6,7 +6,7 @@
         </li>
         <li class="navlink"><a class="linknav" id="nav-contact" href="#">CONTACT</a>
         </li>
-        <li class="navlink cart"><div id="thecart"></div>
+        <li class="navlink cart"><a class="linknav" id="nav-contact" href="#">CART</a><div id="thecart"></div>
         </li>
     </ul>
 </div>
