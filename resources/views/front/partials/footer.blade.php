@@ -4,6 +4,6 @@
     </div>
 </div>
 <div class="w-section">
-    <p class="footercopyright">WEB DESIGN by <span class="mym"><a href="http://mymsolutions.co.za">makeyourmark</a></span>
+    <p class="footercopyright">WEB DESIGN by <span class="mym"><a href="http://mymsolutions.co.za" target="_blank">makeyourmark</a></span>
     </p>
 </div>
