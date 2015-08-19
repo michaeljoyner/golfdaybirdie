@@ -518,7 +518,7 @@ a:hover {
     max-width: 600px;
     margin: 40px auto;
     clear: both;
-    color: $primary_red;
+    color: lighten($primary_red, 10%);
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 23px;

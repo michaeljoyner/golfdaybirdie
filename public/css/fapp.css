@@ -2400,7 +2400,7 @@ a:hover {
     max-width: 600px;
     margin: 40px auto;
     clear: both;
-    color: #DA3132;
+    color: #e25c5d;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 23px;
@@ -3085,5 +3085,22 @@ a:hover {
       font-weight: 300;
       text-transform: uppercase;
       font-size: 15px; }
+
+.w-section.process-section {
+  border-bottom: 10px solid #DA3132;
+  padding-bottom: 25px; }
+  .w-section.process-section .back-home-link {
+    border: 0;
+    color: #e25c5d;
+    padding: 0; }
+
+.additionalinfocontainer .error-box .error-header {
+  text-align: center;
+  color: #e25c5d;
+  text-transform: uppercase; }
+
+.additionalinfocontainer .error-box .text-danger {
+  color: #e25c5d;
+  text-transform: none; }
 
 /*# sourceMappingURL=fapp.css.map */

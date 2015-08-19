@@ -149,3 +149,30 @@
   }
 }
 
+.w-section.process-section {
+  border-bottom: 10px solid $primary_red;
+  padding-bottom: 25px;
+
+  .back-home-link {
+    border: 0;
+    color: lighten($primary_red, 10%);
+    padding: 0;
+  }
+
+}
+
+.additionalinfocontainer {
+  .error-box {
+    .error-header {
+      text-align: center;
+      color: lighten($primary_red, 10%);
+      text-transform: uppercase;
+    }
+
+    .text-danger {
+      color: lighten($primary_red, 10%);
+      text-transform: none;
+    }
+  }
+}
+

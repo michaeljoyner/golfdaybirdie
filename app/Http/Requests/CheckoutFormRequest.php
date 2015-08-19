@@ -6,6 +6,7 @@ use App\Http\Requests\Request;
 
 class CheckoutFormRequest extends Request
 {
+    protected $redirect = '/checkout#checkout-info-form';
     /**
      * Determine if the user is authorized to make this request.
      *

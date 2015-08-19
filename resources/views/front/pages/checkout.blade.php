@@ -12,6 +12,13 @@
 @section('content')
     @include('front.partials.header')
     {!! Form::open(['url' => 'checkout', 'id' => 'checkout-form']) !!}
+    <div class="w-section process-section">
+        <div class="w-container">
+            <h1 class="sectionheading">CHECKOUT PROCESS</h1>
+            <p class="uploadtext">You're almost there. Choose your golf ball quantities, select a branded packaging option, and upload your imagery and fill in your details. We will then contact you with a quote. If you'd like to change your selection, simply go
+                <a href="/" class="back-home-link">back.</a></p>
+        </div>
+    </div>
     <div class="w-section checkoutlistsection">
         <div class="w-container productlistcontainer">
             <h1 class="sectionheading">YOUR SELECTED PRODUCTS</h1>
@@ -68,21 +75,22 @@
         </div>
         <div class="uploadtext deliverytext ch-para"><span class="highlighttext">Don’t have a logo or image?</span> No problem. You don’t have to do this step right now. And if you need us to design a logo or image for you please let us know in the ‘additional information’ box.</div>
     </div>
-    <div class="w-section adittionalinfosection">
+    <div class="w-section adittionalinfosection" id="checkout-info-form">
         <div class="w-container additionalinfocontainer">
             <h1 class="sectionheading">YOUR DETAILS</h1>
+            @include('errors')
             <div class="w-form yourdeatilsform">
                 <div id="email-form" name="email-form">
                     <label class="additionalinfofieldlabel" for="name">Name:</label>
-                    <input class="w-input" id="name" type="text" placeholder="Enter your name" name="name">
+                    <input class="w-input" id="name" type="text" placeholder="Enter your name" name="name" value="{{ Input::old('name') }}">
                     <label class="additionalinfofieldlabel" for="email">Email Address:</label>
-                    <input class="w-input" id="email" type="email" placeholder="Enter your email address" name="email"required="required">
+                    <input class="w-input" id="email" type="email" placeholder="Enter your email address" value="{{ Input::old('email') }}" name="email"required="required">
                     <label class="additionalinfofieldlabel" for="field">Contact Number:</label>
-                    <input class="w-input" id="field" type="text" placeholder="Enter your contact number" name="phone" required="required">
+                    <input class="w-input" id="field" type="text" value="{{ Input::old('phone') }}" placeholder="Enter your contact number" name="phone" required="required">
                     <label class="additionalinfofieldlabel" for="field">ADDRESS:</label>
-                    <input class="w-input" id="field" type="text" placeholder="Delivery address" name="address" required="required">
+                    <input class="w-input" id="field" type="text" placeholder="Delivery address" value="{{ Input::old('address') }}" name="address" required="required">
                     <label class="additionalinfofieldlabel" for="field">Additional Information:</label>
-                    <input class="w-input additionainfotextfield" id="field" type="text" placeholder="Let us know if you have any special requests or questions" name="enquiry">
+                    <input class="w-input additionainfotextfield" id="field" type="text" value="{{ Input::old('enquiry') }}" placeholder="Let us know if you have any special requests or questions" name="enquiry">
                 </div>
             </div>
         </div>
