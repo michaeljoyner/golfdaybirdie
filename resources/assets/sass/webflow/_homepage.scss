@@ -533,3 +533,34 @@ a:hover {
   display: table;
   clear: both;
 }
+
+.sample-section {
+  border-bottom: 10px solid $primary_red;
+  padding-bottom: 50px;
+
+  .sectionheading {
+    text-transform: uppercase;
+    padding-bottom: 25px;
+  }
+  .sample-box {
+    display: inline-block;
+    vertical-align: top;
+    width: 24.5%;
+    padding: 0 15px;
+
+    @include respond-to(phone) {width: 49%;}
+    @include respond-to(smalltablet) {width: 49%;}
+
+    img {
+      max-width: 100%;
+    }
+
+    p {
+      font-family: 'Open Sans', sans-serif;
+      text-align: center;
+      padding-top: 1em;
+      text-transform: uppercase;
+
+    }
+  }
+}

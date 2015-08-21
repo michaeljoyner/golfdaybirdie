@@ -13,7 +13,7 @@
             @foreach($productRow as $product)
                 <div class="col-sm-4 product-box">
                     <div class="product-image-box">
-                        <img src="{{ $product->imageSrc() }}" alt="product image"/>
+                        <img src="{{ $product->smallestImageSrc() }}" alt="product image"/>
                     </div>
                     <p class="product-title">{{ $product->name }}</p>
                     <div class="action-center pull-right">

@@ -1,10 +1,5 @@
 @extends('front.base')
 
-@section('head')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
-    <link rel="stylesheet" href="{{ asset('css/sweetalert.css') }}"/>
-@endsection
-
 @section('content')
     <form action="">
         <imput type="hidden" value="0" id="dirty-bit"></imput>
@@ -31,18 +26,19 @@
                 <div class="w-col w-col-4 stepcolumn last-step">
                     <div class="stepdiv"><img class="stepimage" src="images/homepage/step3.png">
                         <h1 class="stepheading">3.</h1>
-                        <p class="steptext">hazzah! your branding solution</p>
+                        <p class="steptext">Voila! your perfect branded golf ball</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @include('front.partials.samples')
     @include('front.partials.productsection', ['products' => $products])
     @include('front.partials.packaging')
     <div id="delivery-section" class="w-section deliversection">
         <h1 class="sectionheading">DELIVERY</h1>
         <div class="w-container delivercontainer">
-            <p class="deliverytext">WE DELIVER THROUGHOUT SOUTHERN AFRICA.
+            <p class="deliverytext">WE WILL DELIVER YOUR BRANDED GOLF BALLS THROUGHOUT SOUTHERN AFRICA.
                 <br>
                 <br>PLEASE <a class="hyperlink" href="#">CONTACT US</a> WITH ANY ENQUIRIES.</p><img class="deliveryimage" src="images/homepage/africamap.png">
         </div>
@@ -53,7 +49,6 @@
 
 @section('bodyscripts')
     @include('admin.partials.confirmflash')
-    <script src="{{ asset('js/cartmanager.js') }}"></script>
     <script>
         if(cartManager.cart === null) {
             cartManager.init();
@@ -62,36 +57,5 @@
             console.log('cleaning')
             cartManager.cart.syncCart(cartManager.syncButtons);
         }
-    </script>
-    <script>
-        var menuManager = {
-            elems: {
-                productsBtn: document.getElementById('nav-products'),
-                deliveryBtn: document.getElementById('nav-delivery'),
-                contactBtn: document.getElementById('nav-contact'),
-                productsSec: document.getElementById('products-section'),
-                deliverySec: document.getElementById('delivery-section'),
-                contactSec: document.getElementById('contact-section')
-            },
-
-            init: function() {
-                menuManager.elems.productsBtn.addEventListener('click', menuManager.showProducts, false);
-                menuManager.elems.deliveryBtn.addEventListener('click', menuManager.showDelivery, false);
-                menuManager.elems.contactBtn.addEventListener('click', menuManager.showContact, false);
-            },
-
-            showProducts: function() {
-                Velocity(menuManager.elems.productsSec, 'scroll', 500);
-            },
-
-            showDelivery: function() {
-                Velocity(menuManager.elems.deliverySec, 'scroll', 500);
-            },
-
-            showContact: function() {
-                Velocity(menuManager.elems.contactSec, 'scroll', 500);
-            }
-        }
-        menuManager.init();
     </script>
 @endsection

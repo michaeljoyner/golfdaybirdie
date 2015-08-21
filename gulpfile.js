@@ -19,10 +19,8 @@ elixir(function(mix) {
             'cart.js',
             'lodash.min.js',
             'dropzone.js',
-            'dropzonemanager.js'
-        ], './public/js/all.js')
-        .scripts([
+            'dropzonemanager.js',
             'cartmanager.js'
-        ], './public/js/cartmanager.js')
-        .version(['css/app.css', 'css/fapp.css']);
+        ], './public/js/all.js')
+        .version(['css/app.css', 'css/fapp.css', 'js/all.js']);
 });

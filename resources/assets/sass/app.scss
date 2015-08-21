@@ -3,6 +3,7 @@ $navbar-inverse-color: #ffffff;
 $navbar-inverse-link-color: #ffffff;
 
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "partials/sweetalert";
 @import "variables/colours";
 @import "partials/general";
 @import "partials/dropzonepreview";
