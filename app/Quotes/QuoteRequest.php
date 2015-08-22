@@ -34,9 +34,9 @@ class QuoteRequest extends Model
         if($this->attributes['packaging_A'] && $this->attributes['packaging_B']) {
             return 'Yes. Requests both versions of packaging!';
         } else if($this->attributes['packaging_A']) {
-            return 'Yes. Requests packaging option A';
+            return 'Yes. Requests branded packaging of 3s';
         } else if ($this->attributes['packaging_B']) {
-            return 'Yes. Requests packaging option B';
+            return 'Yes. Requests branded set box of 12';
         } else {
             return 'No branded packaging requested.';
         }

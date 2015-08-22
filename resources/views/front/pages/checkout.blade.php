@@ -49,16 +49,16 @@
                 <div class="w-row">
                     <div class="w-col-6">
                         <label for="packaging_A">
-                            <img src="/images/products/default.jpg" alt="packaging image"/>
+                            <img src="{{ asset('images/homepage/3box.jpg') }}" alt="packaging image"/>
                             <input type="checkbox" name="packaging_A" id="packaging_A"/>
-                            <span>Branded packaging option A</span>
+                            <span>Individual Branded Boxes of 3</span>
                         </label>
                     </div>
                     <div class="w-col-6">
                         <label for="packaging_B">
-                            <img src="/images/products/default.jpg" alt="packaging image"/>
+                            <img src="{{ asset('images/homepage/12box.jpeg') }}" alt="packaging image"/>
                             <input type="checkbox" name="packaging_B" id="packaging_B"/>
-                            <span>Branded packaging option B</span>
+                            <span>Branded Box Set of 12</span>
                         </label>
                     </div>
                 </div>
