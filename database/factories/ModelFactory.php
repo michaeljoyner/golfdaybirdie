@@ -62,3 +62,5 @@ $factory->define(\App\Quotes\QuoteImage::class, function(Faker\Generator $faker)
         'image_path' => 'default.jpg'
     ];
 });
+
+

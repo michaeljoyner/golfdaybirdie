@@ -56,7 +56,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::delete('products/{id}', 'ProductsController@delete');
 
         Route::get('quoterequests', 'QuoteRequestsController@index');
+        Route::get('quoterequests/archives', 'QuoteRequestsController@archivesIndex');
+        Route::get('quoterequests/archive/{id}', 'QuoteRequestsController@archive');
         Route::get('quoterequests/{id}', 'QuoteRequestsController@show');
+        Route::delete('quoterequests/{id}', 'QuoteRequestsController@delete');
 
     });
 

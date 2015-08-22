@@ -2,11 +2,27 @@
 
 @section('content')
     <header class="gbb-page-header">
-        <h1>Quote Request from {{ $quoteRequest->name }}</h1>
+        <h1>
+            @if($quoteRequest->archived)
+                Archived Request from {{ $quoteRequest->name }}
+            @else
+                Quote Request from {{ $quoteRequest->name }}
+            @endif
+        </h1>
         <div class="header-action">
             <div class="btn gbb-btn btn-blue">
-                <a href="/admin/quoterequests/archive/{{ $quoteRequest->id }}">Archive</a>
+                <a href="/admin/quoterequests/archive/{{ $quoteRequest->id }}">
+                    @if($quoteRequest->archived)
+                        Unarchive
+                    @else
+                        Archive
+                    @endif
+                </a>
             </div>
+            @include('admin.partials.deletebutton', [
+                'objectName' => 'this request from '.$quoteRequest->name,
+                'deleteFormAction' => '/admin/quoterequests/'.$quoteRequest->id
+            ])
         </div>
         <hr/>
     </header>
@@ -36,5 +52,9 @@
             @endforeach
         </div>
     </div>
+    @include('admin.partials.deletemodal')
+@endsection
 
+@section('bodyscripts')
+    @include('admin.partials.modalscript')
 @endsection

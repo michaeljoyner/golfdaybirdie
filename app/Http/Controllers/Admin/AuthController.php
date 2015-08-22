@@ -22,7 +22,7 @@ class AuthController extends Controller
         $toRemember = $request->has('remember_me');
 
         if(Auth::attempt($credentials, $toRemember)) {
-            return redirect()->intended('/admin');
+            return redirect()->intended('/admin/products');
         }
 
         return redirect()->back();

@@ -1,4 +1,5 @@
 <?php
+use App\Misc\AsLoggedInUserTrait;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
@@ -11,7 +12,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class QuoteRequestsTest extends TestCase
 {
 
-    use DatabaseMigrations;
+    use DatabaseMigrations, AsLoggedInUserTrait;
 
     /**
      * @test
@@ -58,5 +59,79 @@ class QuoteRequestsTest extends TestCase
         $this->seeInDatabase('quote_images', ['image_path' => 'bar.png']);
 
     }
+
+    /**
+     * @test
+     */
+    public function it_deletes_a_quote_request()
+    {
+        $quoteRequest = factory(\App\Quotes\QuoteRequest::class)->create();
+
+        $this->withoutMiddleware();
+        $this->call('DELETE', '/admin/quoterequests/'.$quoteRequest->id);
+
+        $this->notSeeInDatabase('quote_requests',[
+            'id' => $quoteRequest->id,
+            'name' => $quoteRequest->name
+        ]);
+    }
+
+    /**
+     * @test
+     */
+    public function it_archives_a_quote_request()
+    {
+        $quoteRequest = factory(\App\Quotes\QuoteRequest::class)->create();
+
+        $this->visit('/admin/quoterequests/archive/'.$quoteRequest->id);
+
+        $this->seeInDatabase('quote_requests', [
+            'id' => $quoteRequest->id,
+            'archived' => 1
+        ]);
+
+        $this->visit('/admin/quoterequests')
+            ->see($quoteRequest->name, true);
+
+        $this->visit('/admin/quoterequests/archives')
+            ->see($quoteRequest->name);
+    }
+
+    /**
+     * @test
+     */
+    public function it_shows_all_archived_quote_requests()
+    {
+        $quoteRequests = factory(\App\Quotes\QuoteRequest::class, 3)->create(['archived' => 1]);
+
+        $this->visit('/admin/quoterequests/archives');
+
+        foreach($quoteRequests as $quoteRequest) {
+            $this->see($quoteRequest->name);
+        }
+    }
+
+    /**
+     * @test
+     */
+    public function it_unarchives_an_archived_quote_request()
+    {
+        $quoteRequest = factory(\App\Quotes\QuoteRequest::class)->create(['archived' => 1]);
+
+        $this->visit('/admin/quoterequests/archive/'.$quoteRequest->id);
+
+        $this->seeInDatabase('quote_requests', [
+            'id' => $quoteRequest->id,
+            'archived' => 0
+        ]);
+
+        $this->visit('/admin/quoterequests')
+            ->see($quoteRequest->name, false);
+
+        $this->visit('/admin/quoterequests/archives')
+            ->see($quoteRequest->name, true);
+    }
+
+
 
 }

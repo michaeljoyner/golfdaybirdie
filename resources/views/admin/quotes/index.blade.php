@@ -1,7 +1,16 @@
 @extends('admin.base')
 
 @section('content')
-    <h1>Quote Requests</h1>
+    <h1>
+        @if(! $isArchives)
+            Quote Requests
+        @else
+            Archived Quote Requests
+        @endif
+    </h1>
+    @if($quoteRequests->count() === 0)
+        <p>There are no @if(!$isArchives) current @else archived @endif quote requests.</p>
+    @endif
     @foreach($quoteRequests as $quoteRequest)
         <div class="quote-request-box">
             <header>
@@ -14,4 +23,8 @@
     <div class="pagination">
         {!! $quoteRequests->render() !!}
     </div>
+@endsection
+
+@section('bodyscripts')
+    @include('admin.partials.flash')
 @endsection
