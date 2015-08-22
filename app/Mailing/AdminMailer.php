@@ -13,7 +13,7 @@ use App\Quotes\QuoteRequest;
 
 class AdminMailer extends Mailer {
 
-    protected $to = ['joyner.michael@gmail.com' => 'Michael Joyner'];
+    protected $to = ['ryan@absolutesport.co.za' => 'Ryan Keipiel'];
 
     public function notifyOfQuoteRequest($quoteRequest)
     {
