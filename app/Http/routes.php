@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PagesController@home');
+Route::post('contactus', 'PagesController@contact');
 
 Route::get('checkout', 'PagesController@showCheckout');
 Route::post('checkout', 'PagesController@handleCheckout');

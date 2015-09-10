@@ -57,5 +57,7 @@
             console.log('cleaning')
             cartManager.cart.syncCart(cartManager.syncButtons);
         }
+        var contactForm = new AjaxContactForm(document.getElementById('gbb-contact-form'));
+        contactForm.init();
     </script>
 @endsection

@@ -25,4 +25,14 @@ class AdminMailer extends Mailer {
         $this->sendTo($this->to, $from, $subject, $view, $data);
     }
 
+    public function sendContactMessage(array $contact_message)
+    {
+        $from = $contact_message['email'];
+        $subject = 'Site message from GBB';
+        $data = compact('contact_message');
+        $view = 'emails.contact';
+
+        $this->sendTo($this->to, $from, $subject, $view, $data);
+    }
+
 }

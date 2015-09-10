@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\FlashMessages\Flasher;
 use App\Http\Requests\CheckoutFormRequest;
+use App\Http\Requests\ContactFormRequest;
 use App\Mailing\AdminMailer;
 use App\Quotes\QuoteProduct;
 use App\Quotes\QuoteRequest;
@@ -53,6 +54,17 @@ class PagesController extends Controller
         $quoteRequestRepo->store($request, $cartContents);
 
         $this->flasher->success('Thank You!', 'Thanks for your order. We will be in touch soon.');
+
+        return redirect()->to('/');
+    }
+
+    public function contact(ContactFormRequest $request, AdminMailer $mailer)
+    {
+        $mailer->sendContactMessage($request->only(['name', 'email', 'enquiry']));
+
+        if($request->ajax()) {
+            return response()->json('ok');
+        }
 
         return redirect()->to('/');
     }

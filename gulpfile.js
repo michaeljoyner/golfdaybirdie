@@ -20,7 +20,8 @@ elixir(function(mix) {
             'lodash.min.js',
             'dropzone.js',
             'dropzonemanager.js',
-            'cartmanager.js'
+            'cartmanager.js',
+            'contactform.js'
         ], './public/js/all.js')
         .version(['css/app.css', 'css/fapp.css', 'js/all.js']);
 });
