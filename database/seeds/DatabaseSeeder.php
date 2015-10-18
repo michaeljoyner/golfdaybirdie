@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
          $this->call(UserTableSeeder::class);
-        $this->call(ProductsTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
 
         Model::reguard();
     }
@@ -42,5 +42,19 @@ class ProductsTableSeeder extends Seeder {
         $category = factory(Category::class)->create();
 
         factory(Product::class, 12)->create(['category_id' => $category->id]);
+    }
+}
+
+class CategoriesTableSeeder extends Seeder {
+
+    public function run()
+    {
+        \Illuminate\Support\Facades\DB::table('categories')->delete();
+
+        $categories = factory(Category::class, 6)->create();
+
+        foreach($categories as $category) {
+            factory(Product::class, 7)->create(['category_id' => $category->id]);
+        }
     }
 }

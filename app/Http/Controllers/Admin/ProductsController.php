@@ -30,16 +30,24 @@ class ProductsController extends Controller
         return view('admin.products.index')->with(compact('products'));
     }
 
-    public function create()
+    public function show($id)
     {
-        $product = new Product();
+        $product = Product::with('versions')->findOrFail($id);
 
-        return view('admin.products.create')->with(compact('product'));
+        return view('admin.products.show')->with(compact('product'));
     }
 
-    public function store(ProductFormRequest $request)
+    public function create($id)
     {
-        $category = $this->getParentCategory();
+        $category = Category::findOrFail($id);
+        $product = new Product();
+
+        return view('admin.products.create')->with(compact('product', 'category'));
+    }
+
+    public function store($categoryId ,ProductFormRequest $request)
+    {
+        $category = $this->getParentCategory($categoryId);
 
         $category->products()->create($request->all());
 
@@ -80,9 +88,9 @@ class ProductsController extends Controller
     /**
      * @return mixed
      */
-    private function getParentCategory()
+    private function getParentCategory($categoryId)
     {
-        $category = Category::where('name', 'default')->first();
+        $category = Category::findOrFail($categoryId);
 
         if(! $category) {
             $category = Category::create([

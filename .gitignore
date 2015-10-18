@@ -4,4 +4,6 @@ Homestead.yaml
 .env
 /.idea
 /public/useruploads/logos/*
-/public/images/adminuploads/products/*
+/public/images/adminuploads/products/*/*
+/public/images/adminuploads/categories/*/*
+/public/images/adminuploads/versions/*/*

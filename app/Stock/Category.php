@@ -2,13 +2,16 @@
 
 namespace App\Stock;
 
+use App\UploadedImages\GetsImageSourcesTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use SetsSlugFromNameTrait;
+    use SetsSlugFromNameTrait, GetsImageSourcesTrait;
 
     protected $table = 'categories';
+
+    protected $fallbackImagePath = 'images/umbrella.png';
 
     protected $fillable = [
         'name',

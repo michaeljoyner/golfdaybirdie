@@ -1,0 +1,25 @@
+.category-product-list {
+  .product-item {
+    width: 33%;
+    padding: 12px 40px;
+    display: inline-block;
+    font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial;
+  }
+
+  .product-item-image {
+    display: block;
+    width: 80%;
+    margin: 1em auto;
+  }
+
+  .product-item-heading {
+    text-align: center;
+    height: 70px;
+  }
+
+  .product-item-description {
+    margin-bottom: 20px;
+    height: 140px;
+    overflow: hidden;
+  }
+}

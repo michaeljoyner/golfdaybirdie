@@ -5,11 +5,11 @@
 @stop
 
 @section('content')
-    <h1>Add a new Product</h1>
+    <h1>Add a new product to {{ $category->name }}</h1>
     <div class="row">
         <div class="col-sm-7">
             @include('admin.forms.product', [
-                'formAction' => '/admin/products',
+                'formAction' => '/admin/categories/'.$category->id.'/products',
                 'product' => $product,
                 'submitText' => 'Add Product',
                 'formId' => 'product-create'

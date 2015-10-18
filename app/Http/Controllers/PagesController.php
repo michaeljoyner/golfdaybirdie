@@ -9,12 +9,14 @@ use App\Mailing\AdminMailer;
 use App\Quotes\QuoteProduct;
 use App\Quotes\QuoteRequest;
 use App\Quotes\QuoteRequestRepo;
+use App\Stock\Category;
 use App\Stock\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use JavaScript;
 
 class PagesController extends Controller
 {
@@ -32,8 +34,31 @@ class PagesController extends Controller
     public function home()
     {
         $products = Product::all();
+        $categories = Category::all();
 
-        return view('front.pages.home')->with(compact('products'));
+        return view('front.pages.home')->with(compact('products', 'categories'));
+    }
+
+    public function about()
+    {
+        return view('front.pages.about');
+    }
+
+    public function category($slug)
+    {
+        $category = Category::with('products')->where('slug', $slug)->first();
+
+        return view('front.pages.category')->with(compact('category'));
+    }
+
+    public function product($slug)
+    {
+        $product = Product::with('versions', 'sizes')->where('slug', $slug)->first();
+        Javascript::put([
+            'versions' => $product->versions,
+            'sizes' => $product->sizes
+        ]);
+        return view('front.pages.product')->with(compact('product'));
     }
 
     public function showCheckout()
@@ -44,7 +69,7 @@ class PagesController extends Controller
             $ids[] = $item->id;
         }
         $products = Product::find($ids);
-        return view('front.pages.checkout')->with(compact('products'));
+        return view('front.pages.cart')->with(compact('products'));
     }
 
     public function handleCheckout(CheckoutFormRequest $request, QuoteRequestRepo $quoteRequestRepo)

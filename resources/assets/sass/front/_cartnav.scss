@@ -1,0 +1,38 @@
+#cart {
+  position: relative;
+
+  [v-cloak] {
+    display: none;
+  }
+
+  .cart-summary-box {
+    position: absolute;
+    width: 200px;
+    height: 62px;
+    top: -104%;
+    left: 115%;
+    padding: 8px;
+    font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial;
+    font-size: 16px;
+    font-weight: 300;
+    color: white;
+    background: #184f5e;
+    transition: .5s;
+    transform-origin: top left;
+    transform: scale(0,1);
+
+    p {
+      margin-bottom: 5px;
+    }
+  }
+
+  .cart-summary-box.show {
+    background: #184f5e;
+    transform: scale(1,1);
+  }
+
+  &:hover .cart-summary-box, {
+    transform: scale(1,1);
+    background: $soft_green;
+  }
+}

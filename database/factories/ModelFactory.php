@@ -38,6 +38,15 @@ $factory->define(App\Stock\Product::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Stock\ProductVersion::class, function (Faker\Generator $faker) {
+    return [
+        'product_id' => factory(\App\Stock\Product::class)->create()->id,
+        'version_name' => $faker->words(3, true),
+        'description' => $faker->paragraph(),
+        'image_path' => 'default.jpg',
+    ];
+});
+
 $factory->define(\App\Quotes\QuoteRequest::class, function(Faker\Generator $faker) {
     return [
         'name' => $faker->name,

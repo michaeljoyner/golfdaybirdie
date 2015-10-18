@@ -8,6 +8,7 @@
     @yield('head')
     <link rel="stylesheet" href="{{ elixir('css/app.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/sweetalert.css') }}"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 </head>
 <body>

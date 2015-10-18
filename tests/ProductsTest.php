@@ -14,19 +14,22 @@ class ProductsTest extends TestCase {
 
     use DatabaseMigrations, AsLoggedInUserTrait;
 
+
     /**
      * @test
      */
-    public function it_creates_a_new_product()
+    public function it_adds_a_new_product_to_the_correct_category()
     {
+        $category = factory(\App\Stock\Category::class)->create();
         $product = factory(Product::class)->make();
 
-        $this->visit('admin/products/create')
+        $this->visit('admin/categories/'.$category->id.'/addproduct')
             ->submitForm('Add Product', [
                 'name' => $product->name,
                 'quantity' => $product->quantity,
                 'description' => $product->description
             ])->seeInDatabase('products', [
+                'category_id' => $category->id,
                 'name' => $product->name,
                 'quantity' => $product->quantity,
                 'description' => $product->description

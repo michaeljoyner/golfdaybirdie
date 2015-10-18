@@ -1,11 +1,7 @@
 @import "variables/colours";
 @import "mixins/media";
-@import "webflow/normalise";
-@import "webflow/webflow";
-@import "webflow/homepage";
-@import "partials/frontdropzone";
-@import "partials/shoppingcart";
-@import "webflow/checkoutpage";
-@import "pages/checkout";
-@import "partials/sweetalert";
-@import "partials/contactform";
+
+@import "front/productitem";
+@import "front/productshow";
+@import "front/cartnav";
+@import "front/cartlist";

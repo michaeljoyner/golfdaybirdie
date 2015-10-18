@@ -26,5 +26,17 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function versions()
+    {
+        return $this->hasMany('App\Stock\ProductVersion', 'product_id');
+    }
+
+    public function sizes()
+    {
+        return $this->belongsToMany('App\Stock\Size');
+    }
+
+
+
 
 }

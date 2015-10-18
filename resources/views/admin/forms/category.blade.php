@@ -1,4 +1,4 @@
-{!! Form::model($category, ['url' => $formAction, 'class' => 'form-horizontal']) !!}
+{!! Form::model($category, ['url' => $formAction, 'class' => 'form-horizontal', 'id' => $formId]) !!}
 <div class="form-group">
     <label for="name">Category name: </label>
     {!! Form::text('name', null, ['class' => 'form-control']) !!}

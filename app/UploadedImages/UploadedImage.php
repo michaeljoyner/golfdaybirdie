@@ -76,9 +76,11 @@ abstract class UploadedImage {
     protected function createThumbnail()
     {
         $path = $this->basePath.'thumb/'.$this->prefix.$this->originalName;
-        $thumb = $this->imageForThumb->fit($this->dimensions['thumb']);
+        $canvas = $this->imager->canvas($this->dimensions['thumb'], $this->dimensions['thumb']);
+        $thumb = $this->resizeWithAspectRation($this->imageForThumb, $this->dimensions['thumb']);
+        $canvas->insert($thumb, 'center');
         $this->thumbPath = $path;
-        $thumb->save(public_path().$path);
+        $canvas->save(public_path().$path);
     }
 
     protected function resizeMain()

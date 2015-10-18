@@ -11,6 +11,11 @@ namespace App\UploadedImages;
 
 trait GetsImageSourcesTrait {
 
+    public function getImagePathAttribute($image_path)
+    {
+        return $this->smallestImageSrc();
+    }
+
     public function imageSrc()
     {
         if(! isset($this->attributes['image_path']) || $this->cantResolveImagePath($this->attributes['image_path'])) {

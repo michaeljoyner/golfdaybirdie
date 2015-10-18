@@ -139,6 +139,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
         'Intervention\Image\ImageServiceProvider',
+        'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider',
 
 
         /*

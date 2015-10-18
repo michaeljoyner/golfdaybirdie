@@ -1,6 +1,6 @@
-$navbar-inverse-bg: #DA3231;
-$navbar-inverse-color: #ffffff;
-$navbar-inverse-link-color: #ffffff;
+$navbar-inverse-bg: #184f5e;
+$navbar-inverse-color: #C8E3C6;
+$navbar-inverse-link-color: #C8E3C6;
 
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "partials/sweetalert";
@@ -14,4 +14,5 @@ $navbar-inverse-link-color: #ffffff;
 @import "admin/partials/usercard";
 @import "admin/partials/quotepreview";
 @import "admin/partials/quoterequest";
+@import "admin/partials/productindex";
 

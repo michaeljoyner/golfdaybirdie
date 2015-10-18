@@ -7,18 +7,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">GolfBallBranding</a>
+            <a class="navbar-brand" href="/">Golf Day Birdie</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 {{--<li @if(Request::path() === 'admin') class="active" @endif ><a href="/admin">Home</a></li>--}}
-                <li @if(starts_with(Request::path(), 'admin/products')) class="active" @endif  class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/admin/products">View all</a></li>
-                        <li><a href="/admin/products/create">Add a Product</a></li>
-                    </ul>
-                </li>
+                <li @if(starts_with(Request::path(), 'admin/categories')) class="active" @endif><a href="/admin/categories">Categories</a></li>
+                <li @if(starts_with(Request::path(), 'admin/products')) class="active" @endif><a href="/admin/products">Products</a></li>
                 <li @if(starts_with(Request::path(), 'admin/quoterequests')) class="active" @endif  class="dropdown">
                     <a href="/admin/quoterequests" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quote Requests <span class="caret"></span></a>
                     <ul class="dropdown-menu">
