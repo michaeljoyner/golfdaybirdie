@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use JavaScript;
-use App\Orders\OrderItemResolver;
+use App\Orders\CartItemResolver;
 use App\Stock\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -14,11 +14,11 @@ use App\Http\Controllers\Controller;
 class CartController extends Controller
 {
     /**
-     * @var OrderItemResolver
+     * @var CartItemResolver
      */
     private $itemResolver;
 
-    public function __construct(OrderItemResolver $itemResolver)
+    public function __construct(CartItemResolver $itemResolver)
     {
         $this->itemResolver = $itemResolver;
     }
@@ -96,53 +96,17 @@ class CartController extends Controller
         return view('front.pages.cart')->with(compact('cartItems'));
     }
 
-    public function remove($itemId)
+    public function updateRow(Request $request, $rowId)
     {
-        $id = intval($itemId);
-
-        $rowId = Cart::search(['id' => $id]);
-        $item = Cart::get($rowId[0]);
-        Cart::remove($rowId[0]);
-
-
-        return response()->json([
-            'id' => $item->id,
-            'name' => $item->name
-        ]);
+        $qty = $request->item['quantity'];
+        Cart::update($rowId, $qty);
+        return response()->json('ok');
     }
 
-    public function getContents(Request $request, $timestamp)
+    public function removeItem($rowId)
     {
-        if(! $request->ajax()) {
-            return response('invalid request', 403);
-        }
-
-        $items = [];
-
-        $contents = Cart::content();
-        foreach($contents as $item) {
-            $items[] = $item;
-        }
-
-        return response()->json($items);
-    }
-
-    public function viewCart()
-    {
-        $contents = Cart::content();
-
-        return view('front.testcheckout')->with(compact('contents'));
-    }
-
-    public function destroy(Request $request)
-    {
-        Cart::destroy();
-
-        if($request->ajax()) {
-            return response()->json('ok');
-        }
-
-        return redirect()->to('/checkout');
+        $result = Cart::remove($rowId);
+        return response()->json('ok');
     }
 
     private function generateItemId($request)
@@ -154,11 +118,5 @@ class CartController extends Controller
         ];
 
         return implode('_', $ids);
-    }
-
-    public function removeItem($rowId)
-    {
-        $result = Cart::remove($rowId);
-        return response()->json('ok');
     }
 }

@@ -23,7 +23,20 @@
                         <div class="size">@{{ item.size }}</div>
                     </div>
                     <div class="cart-wrapper quantity">
-                        <div class="quantity">@{{ item.quantity }}</div>
+                        <div class="quantity">
+                            <span v-if="syncingItems.indexOf(item.cartRowId) !== -1"><i class="fa fa-spinner fa-spin"></i></span>
+                            <span v-if="editingItems.indexOf(item.cartRowId) === -1">@{{ item.quantity }}</span>
+                            <input class="cart-item-qty-input"
+                                   v-if="editingItems.indexOf(item.cartRowId) !== -1"
+                                   type="number"
+                                   min="1"
+                                   v-model="item.quantity"
+                            />
+                            <div class="edit-save-btn"
+                                 v-on="click: showEdit(item)"
+                                 v-text="editingItems.indexOf(item.cartRowId) !== -1 ? 'save' : 'edit'"
+                            ></div>
+                        </div>
                     </div>
                     <div class="cart-wrapper delete">
                         <span v-on="click: removeItem(item)"><i class="fa fa-trash"></i></span>
@@ -34,72 +47,19 @@
                 <p class="cart-list-empty">Your cart is currently empty.</p>
             </li>
         </ul>
+        <div class="argyle-divider shortened"></div>
+        <div class="btn btn-checkout">
+            <a href="/checkout">checkout</a>
+        </div>
+        <a class="back-to-shop-link" href="/">Back to shop</a>
     </div>
     <div class="w-section argyle-divider"></div>
 @endsection
 
 @section('bodyscripts')
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
-    <script src="{{ asset('js/vue-resource.min.js') }}"></script>
     <script>
         Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#x-token').getAttribute('content');
-
-        var cartManager = new Vue({
-            el: '#cart',
-            data: {
-                summary: {
-                    products: 0,
-                    items: 0
-                },
-                toShow: false
-            },
-            computed: {
-                mustShow: function() {
-                    return this.toShow;
-                }
-            },
-            ready: function () {
-                this.sync();
-            },
-            methods: {
-                sync: function () {
-                    this.$http.get('/cart/countitems', function (result) {
-                        this.$set('summary', result.summary);
-                        if(result.empty > 0) {
-                            this.flash();
-                        }
-                    });
-                },
-                flash: function() {
-                    var self = this;
-                    function reset() {
-                        console.log('resetting');
-                        self.$set('toShow', false);
-                    }
-                    this.toShow = true;
-                    window.setTimeout(reset, 2000);
-                }
-            }
-        });
-
-        var cartListManager = new Vue({
-            el: '#cart-items',
-            data: {
-                items: []
-            },
-            ready: function () {
-                this.$set('items', vueDataStore.items);
-            },
-            methods: {
-                removeItem: function (item) {
-                    this.$http.delete('/cart/' + item.cartRowId, function (result) {
-                        this.items.$remove(item);
-                        cartManager.sync();
-                    }).error(function (data) {
-                        console.log(data);
-                    })
-                }
-            }
-        });
+        var cartManager = new Vue(vueConstructorObjects.cartManager);
+        var cartListManager = new Vue(vueConstructorObjects.cartListManager);
     </script>
 @endsection

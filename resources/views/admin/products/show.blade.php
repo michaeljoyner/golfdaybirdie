@@ -81,57 +81,10 @@
 @endsection
 
 @section('bodyscripts')
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
-    <script src="{{ asset('js/vue-resource.min.js') }}"></script>
-
     @include('admin.partials.modalscript')
     @include('admin.partials.flash')
     <script>
         Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#x-token').getAttribute('content');
-        var sizes = new Vue({
-            el: '#sizes',
-            data: {
-                sizes: [],
-                new_size: '',
-                syncOperations: 0
-            },
-            computed: {
-                syncing: function() {
-                    return this.syncOperations > 0;
-                }
-            },
-            ready: function() {
-                this.$set('product_id', document.querySelector('#product-show').getAttribute('data-product-id'));
-                this.getSizes();
-            },
-            methods: {
-                getSizes: function() {
-                    this.syncOperations++;
-                    this.$http.get('/admin/api/products/' + this.product_id +'/sizes', function(sizes) {
-                        this.$set('sizes', sizes);
-                        this.syncOperations--;
-                    });
-                },
-                syncSizes: function() {
-                    this.syncOperations++;
-                    this.$http.post('/admin/api/products/' + this.product_id +'/sizes', {sizes: this.sizes},  function(sizes) {
-                        this.$set('sizes', sizes);
-                        this.syncOperations--;
-                    });
-                },
-                addSize: function() {
-                    if(!this.new_size) {
-                        return;
-                    }
-                    this.sizes.push(this.new_size);
-                    this.new_size = '';
-                    this.syncSizes();
-                },
-                removeSize: function(size) {
-                    this.sizes.$remove(size);
-                    this.syncSizes();
-                }
-            }
-        });
+        var sizes = new Vue(vueConstructorObjects.adminProductSizes);
     </script>
 @endsection

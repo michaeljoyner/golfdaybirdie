@@ -19,7 +19,6 @@ class CategoriesController extends Controller
 
     public function __construct(Flasher $flasher)
     {
-
         $this->flasher = $flasher;
     }
 
@@ -65,7 +64,9 @@ class CategoriesController extends Controller
 
         $category->update($request->all());
 
-        return redirect()->to('/admin');
+        $this->flasher->success('Category Updated', 'Up, up, and updated');
+
+        return redirect()->to('/admin/categories');
     }
 
     public function delete($id)
@@ -74,6 +75,8 @@ class CategoriesController extends Controller
 
         $category->delete();
 
-        return redirect()->to('/admin');
+        $this->flasher->success('Category Deleted', 'Well bowled');
+
+        return redirect()->to('/admin/categories');
     }
 }

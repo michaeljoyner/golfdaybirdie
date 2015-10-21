@@ -53,7 +53,7 @@ class PagesController extends Controller
 
     public function product($slug)
     {
-        $product = Product::with('versions', 'sizes')->where('slug', $slug)->first();
+        $product = Product::with('category', 'versions', 'sizes')->where('slug', $slug)->first();
         Javascript::put([
             'versions' => $product->versions,
             'sizes' => $product->sizes
@@ -63,13 +63,7 @@ class PagesController extends Controller
 
     public function showCheckout()
     {
-        $items = Cart::content();
-        $ids = [];
-        foreach($items as $item) {
-            $ids[] = $item->id;
-        }
-        $products = Product::find($ids);
-        return view('front.pages.cart')->with(compact('products'));
+        return view('front.pages.checkout');
     }
 
     public function handleCheckout(CheckoutFormRequest $request, QuoteRequestRepo $quoteRequestRepo)

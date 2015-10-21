@@ -28,48 +28,9 @@
 @endsection
 
 @section('bodyscripts')
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
-    <script src="{{ asset('js/vue-resource.min.js') }}"></script>
+    @include('admin.partials.flash')
     <script>
         Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#x-token').getAttribute('content');
-        var productList = new Vue({
-            el: '#products-list',
-            data: {
-                results: [],
-                searchTerm: '',
-                performedSearch: ''
-            },
-            computed: {
-                noResults: function() {
-                    return this.performedSearch != '' && this.results.length === 0;
-                }
-            },
-            ready: function() {
-                this.$http.get('/admin/api/products/allproducts' + this.performedSearch, function(products) {
-                    this.$set('results', products);
-                });
-            },
-            methods: {
-                search: function() {
-                    this.performedSearch = this.searchTerm;
-                    this.searchTerm = '';
-                    this.$http.get('/admin/api/products/' + this.performedSearch, function(products) {
-                        this.$set('results', products);
-                    });
-                },
-                getResultImage: function(result) {
-                    if(result.versions) {
-                        return result.versions[0].image_path;
-                    }
-                    return result.image_path;
-                },
-                getResultName: function(result) {
-                    if(result.versions) {
-                        return result.name + " - " + result.versions[0].version_name;
-                    }
-                    return result.name;
-                }
-            }
-        });
+        var productList = new Vue(vueConstructorObjects.adminProductList);
     </script>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="w-section argyle-banner about">
-        <h1 class="section-heading mission">TITLE</h1>
+        <h1 class="section-heading mission">{{ $category->name }}</h1>
     </div>
     <div class="w-section section-products category-product-list">
     @foreach($category->products->chunk(3) as $row)

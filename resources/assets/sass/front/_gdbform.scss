@@ -1,0 +1,40 @@
+.gdb-form {
+  max-width: 500px;
+  margin: 30px auto;
+
+  .gdb-form-group {
+
+    label {
+      display: block;
+      color: $soft_green;
+    }
+
+    input, textarea {
+      width: 100%;
+      display: inline-block;
+      margin: 10px 15px;
+    }
+
+    input {
+      height: 32px;
+    }
+
+    textarea {
+      height: 120px;
+      resize: none;
+      border: 1px solid #e5e5e5;
+    }
+
+    button[type=submit] {
+      width: 300px;
+      display: block;
+      height: 3em;
+      color: #ffffff;
+      background: $soft_green;
+      border-radius: 12px;
+      text-align: center;
+      margin: 20px auto;
+      text-transform: uppercase;
+    }
+  }
+}

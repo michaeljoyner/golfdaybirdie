@@ -7382,7 +7382,7 @@ form.dropzone {
 
 .user-card {
   padding: 10px 10px 30px 20px;
-  border: 1px solid #747575;
+  border: 1px solid #7ECBBB;
   width: 80%;
   margin-bottom: 15px; }
 
@@ -7443,5 +7443,36 @@ form.dropzone {
     font-size: 120%;
     color: #184f5e;
     padding-left: 50px; }
+
+.order-summary {
+  width: 90%;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #FC6F11; }
+  .order-summary .order-customer-name {
+    width: 70%;
+    float: left;
+    margin-top: 0; }
+  .order-summary .order-date {
+    width: 20%;
+    float: right;
+    margin-top: 10px;
+    color: #7ECBBB; }
+  .order-summary table {
+    width: 90%;
+    margin: 0 auto; }
+    .order-summary table thead {
+      color: #184f5e;
+      text-transform: uppercase; }
+
+.order-details .detail-label {
+  color: #FC6F11;
+  font-weight: 600; }
+
+.order-show-items .item-thumb {
+  max-width: 80px; }
+
+.order-show-items td:not(:first-child) {
+  padding-top: 30px; }
 
 /*# sourceMappingURL=app.css.map */

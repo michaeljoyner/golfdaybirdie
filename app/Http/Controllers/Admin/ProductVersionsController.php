@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\FlashMessages\Flasher;
 use App\Stock\Product;
 use App\Stock\ProductVersion;
 use Illuminate\Http\Request;
@@ -11,6 +12,17 @@ use App\Http\Controllers\Controller;
 
 class ProductVersionsController extends Controller
 {
+
+    /**
+     * @var Flasher
+     */
+    private $flasher;
+
+    public function __construct(Flasher $flasher)
+    {
+        $this->flasher = $flasher;
+    }
+
     public function create($productId)
     {
         $product = Product::findorFail($productId);
@@ -24,6 +36,8 @@ class ProductVersionsController extends Controller
         $product = Product::findOrFail($productId);
 
         $product->versions()->create($request->all());
+
+        $this->flasher->success('New Version added', 'Diversity is the spice of life');
 
         return redirect()->to('admin/products/'.$productId);
     }
@@ -43,6 +57,8 @@ class ProductVersionsController extends Controller
 
         $version->update($request->all());
 
+        $this->flasher->success('Version updated', 'Keeping it current... Respect');
+
         return redirect()->to('admin/products/'.$product->id);
     }
 
@@ -52,6 +68,8 @@ class ProductVersionsController extends Controller
         $product = $version->product;
 
         $version->delete();
+
+        $this->flasher->success('Version deleting', 'Trimming the fat');
 
         return redirect()->to('admin/products/'.$product->id);
 

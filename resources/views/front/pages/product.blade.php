@@ -7,7 +7,11 @@
 
 @section('content')
     <div class="back-function">
-        <div class="back-text">&lt; BACK</div>
+        <div class="back-text">
+            <a class="breadcrumb-link" href="/">Home</a>
+            <a class="breadcrumb-link" href="/category/{{ $product->category->slug }}">{{ $product->category->name }}</a>
+            <span class="breadcrumb-final">{{ $product->name }}</span>
+        </div>
     </div>
     <div class="w-section argyle-divider"></div>
     <div class="w-section">
@@ -67,101 +71,9 @@
 @endsection
 
 @section('bodyscripts')
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
-    <script src="{{ asset('js/vue-resource.min.js') }}"></script>
     <script>
         Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#x-token').getAttribute('content');
-        var cartManager = new Vue({
-            el: '#cart',
-            data: {
-                summary: {
-                    products: 0,
-                    items: 0
-                },
-                toShow: false
-            },
-            computed: {
-                mustShow: function() {
-                    return this.toShow;
-                }
-            },
-            ready: function () {
-                this.sync();
-            },
-            methods: {
-                sync: function () {
-                    this.$http.get('/cart/countitems', function (result) {
-                        this.$set('summary', result.summary);
-                        if(result.empty > 0) {
-                            this.flash();
-                        }
-                    });
-                },
-                flash: function() {
-                    var self = this;
-                    function reset() {
-                        console.log('resetting');
-                        self.$set('toShow', false);
-                    }
-                    this.toShow = true;
-                    window.setTimeout(reset, 2000);
-                }
-            }
-        });
-
-        var productManager = new Vue({
-            el: '#product-manager',
-            data: {
-                quantity: 1,
-                selectedSize: null,
-                selectedVersion: null,
-                addedToCart: false,
-                displayImg: '',
-                addingToCart: false
-            },
-            computed: {
-                requiresSize: function() {
-                    return this.sizes && this.sizes.length > 0;
-                }
-            },
-            ready: function() {
-                this.$set('versions', vueDataStore.versions);
-                this.$set('sizes', vueDataStore.sizes);
-                this.$set('productId', document.querySelector('#product-manager').getAttribute('data-product-id'));
-            },
-            methods: {
-                setVersion: function(version) {
-                    this.displayImg = version.image_path.replace('thumb/', '');
-                    this.selectedVersion = version;
-                },
-                clearVersion: function() {
-                    this.displayImg = '';
-                    this.selectedVersion = null;
-                },
-                setSize: function(size) {
-                    this.selectedSize = size;
-                },
-                addToCart: function() {
-                    if(this.requiresSize && ! this.selectedSize) {
-                        return;
-                    }
-                    this.addingToCart = true;
-                    this.$http.post('/cart/additem', {
-                        id: this.productId,
-                        version: this.selectedVersion ? this.selectedVersion.id : null,
-                        size: this.selectedSize ? this.selectedSize.id : null,
-                        quantity: this.quantity
-                    }, function(result) {
-                        this.addingToCart = false;
-                        cartManager.sync();
-                        this.clearInputs();
-                    });
-                },
-                clearInputs: function() {
-                    this.selectedSize = null;
-                    this.quantity = 1;
-                }
-            }
-        });
+        var cartManager = new Vue(vueConstructorObjects.cartManager);
+        var productManager = new Vue(vueConstructorObjects.productManager);
     </script>
 @endsection

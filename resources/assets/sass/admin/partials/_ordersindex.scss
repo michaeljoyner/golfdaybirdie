@@ -1,0 +1,30 @@
+.order-summary {
+
+  width: 90%;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid $primary_red;
+
+  .order-customer-name {
+    width: 70%;
+    float: left;
+    margin-top: 0;
+  }
+
+  .order-date {
+    width: 20%;
+    float: right;
+    margin-top: 10px;
+    color: $soft_green;
+  }
+
+  table {
+    width: 90%;
+    margin: 0 auto;
+
+    thead {
+      color: $primary_blue;
+      text-transform: uppercase;
+    }
+  }
+}

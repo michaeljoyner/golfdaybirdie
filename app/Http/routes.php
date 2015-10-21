@@ -12,24 +12,22 @@
 */
 
 Route::get('/', 'PagesController@home');
-Route::get('cart', 'CartController@showCart');
 Route::get('about', 'PagesController@about');
 Route::get('category/{slug}', 'PagesController@category');
 Route::get('product/{slug}', 'PagesController@product');
 
 Route::post('contactus', 'PagesController@contact');
 
+Route::get('cart', 'CartController@showCart');
 Route::get('checkout', 'PagesController@showCheckout');
-Route::post('checkout', 'PagesController@handleCheckout');
+Route::post('checkout', 'CheckoutController@checkout');
 
-Route::get('cart/contents/{timestamp}', 'CartController@getContents');
-Route::get('cart/destroy', 'CartController@destroy');
 Route::get('cart/countitems', 'CartController@getItemCount');
 Route::delete('cart/{rowId}', 'CartController@removeItem');
 Route::post('cart/additem', 'CartController@add');
+Route::post('cart/update/{rowId}', 'CartController@updateRow');
 Route::get('cart/remove/{itemId}', 'CartController@remove');
 
-Route::post('logouploads', 'LogoUploadController@storeLogo');
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
@@ -76,11 +74,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::post('versions/{id}', 'ProductVersionsController@update');
         Route::delete('versions/{id}', 'ProductVersionsController@delete');
 
-        Route::get('quoterequests', 'QuoteRequestsController@index');
-        Route::get('quoterequests/archives', 'QuoteRequestsController@archivesIndex');
-        Route::get('quoterequests/archive/{id}', 'QuoteRequestsController@archive');
-        Route::get('quoterequests/{id}', 'QuoteRequestsController@show');
-        Route::delete('quoterequests/{id}', 'QuoteRequestsController@delete');
+        Route::get('orders', 'OrdersController@index');
+        Route::get('orders/archives', 'OrdersController@indexArchived');
+        Route::get('orders/{id}', 'OrdersController@show');
+        Route::get('orders/archives/{id}', 'OrdersController@archive');
+        Route::delete('orders/{id}', 'OrdersController@delete');
 
         Route::get('api/products/{productId}/sizes', 'ProductApiController@getProductSizes');
         Route::post('api/products/{id}/sizes', 'ProductApiController@syncProductSizes');

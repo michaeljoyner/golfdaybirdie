@@ -989,6 +989,11 @@
 
 }
 
+.argyle-divider.shortened {
+    width: 90%;
+    margin: 0 auto;
+}
+
 
 .back-function {
 
@@ -1380,6 +1385,10 @@
   border-bottom: 3px solid #cacdce;
 
 
+}
+
+.cart-product li:last-of-type>.cart-product-wrapper {
+    border-bottom-color: transparent;
 }
 
 ul.cart-list {

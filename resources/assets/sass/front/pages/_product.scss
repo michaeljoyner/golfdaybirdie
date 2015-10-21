@@ -1,0 +1,15 @@
+.back-function {
+  .breadcrumb-link {
+    color: $primary_blue;
+    text-decoration: none;
+  }
+
+  .breadcrumb-link:hover {
+    color: $soft_green;
+  }
+
+  .breadcrumb-link:after {
+    content: ' >> ';
+    color: $primary_blue;
+  }
+}

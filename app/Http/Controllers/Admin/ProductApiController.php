@@ -13,27 +13,29 @@ class ProductApiController extends Controller
 {
     public function search($searchTerm)
     {
-        $products = Product::where('name', 'LIKE', '%'.$searchTerm.'%')->get()->toArray();
+        $products = Product::where('name', 'LIKE', '%'.$searchTerm.'%')->with('versions')->get()->toArray();
         $productsWithVariants = Product::whereHas('versions', function($query) use ($searchTerm) {
             $query->where('version_name', 'LIKE', '%'.$searchTerm.'%');
-        })->with('versions')->get()->toArray();
+        })->with(['versions' => function($query) use ($searchTerm) {
+            $query->where('version_name', 'LIKE', '%'.$searchTerm.'%');
+        }])->get()->toArray();
 
-        $all = array_merge($products, $productsWithVariants);
+        $extendedProducts = $this->flattenOutProducts($products);
+        $extendedVariants = $this->flattenOutProducts($productsWithVariants, false);
 
-        return $all;
+        $all = array_merge($extendedProducts, $extendedVariants);
+
+        return response()->json($all);
     }
 
     public function listProducts()
     {
-        $products = Product::all();
-        $productsWithVariants = Product::has('versions')->with('versions')->get();
-//        $all = collect(array_merge($products, $productsWithVariants));
-        $productsWithVariants->each(function($item) use ($products) {
-            $products->push($item);
-        });
-        $sorted = $products->sortBy('id');
-        $sorted = $sorted->values()->all();
-        return $sorted;
+        $products = Product::with('versions')->get()->toArray();
+
+        $extendedProducts = $this->flattenOutProducts($products);
+
+
+        return response()->json($extendedProducts);
     }
 
     public function getProductSizes($productId)
@@ -97,5 +99,24 @@ class ProductApiController extends Controller
     private function getSizeIds($posted_sizes)
     {
         return Size::whereIn('size', $posted_sizes)->get()->lists('id')->toArray();
+    }
+
+    private function flattenOutProducts($products, $withBase = true)
+    {
+        $extendedProducts = [];
+        foreach($products as $product) {
+            if($withBase) {
+                $base = $product;
+                $base['versions'] = [];
+                array_push($extendedProducts, $base);
+            }
+            foreach($product['versions'] as $version) {
+                $versioned = $product;
+                $versioned['versions'] = [$version];
+                array_push($extendedProducts, $versioned);
+            }
+        }
+
+        return $extendedProducts;
     }
 }

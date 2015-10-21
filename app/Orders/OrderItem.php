@@ -1,46 +1,64 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mooz
- * Date: 10/17/15
- * Time: 9:34 AM
- */
 
 namespace App\Orders;
 
+use Illuminate\Database\Eloquent\Model;
 
-class OrderItem {
+class OrderItem extends Model
+{
+    protected $table = 'order_items';
 
-    public $cartRowId;
-    public $itemId;
-    public $quantity;
-    public $images = [];
-    public $itemName;
-    public $size;
+    protected $fillable = [
+        'product_id',
+        'version_id',
+        'size_id',
+        'quantity'
+    ];
 
-    function __construct($cartRowId, $itemId, $itemName, $quantity, $size, $images)
+    public function order()
     {
-        $this->cartRowId = $cartRowId;
-        $this->itemId = $itemId;
-        $this->itemName = $itemName;
-        $this->quantity = $quantity;
-        $this->size = $size;
-        $this->images = $images;
+        return $this->belongsTo('App\Orders\Order', 'order_id');
     }
 
-
-    public function name()
+    public function product()
     {
-        return $this->itemName;
+        return $this->belongsTo('App\Stock\Product', 'product_id');
     }
 
-    public function thumb() {
-        return $this->images['thumb'];
+    public function version()
+    {
+        return $this->belongsTo('App\Stock\ProductVersion', 'version_id');
     }
 
     public function size()
     {
-        return $this->size;
+        return $this->belongsTo('App\Stock\Size', 'size_id');
     }
 
+    public function fullItemName()
+    {
+        if($this->attributes['version_id']) {
+            return $this->product->name. ' - ' . $this->version->version_name;
+        }
+
+        return $this->product->name;
+    }
+
+    public function getSizeText()
+    {
+        if($this->attributes['size_id']) {
+            return $this->size->size;
+        }
+
+        return 'N/A';
+    }
+
+    public function itemThumb()
+    {
+        if($this->attributes['version_id']) {
+            return $this->version->smallestImageSrc();
+        }
+
+        return $this->product->smallestImageSrc();
+    }
 }

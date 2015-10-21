@@ -71,7 +71,7 @@ class ProductsController extends Controller
 
         $this->flasher->success('Product Updated', 'Good job, applaud yourself.');
 
-        return redirect()->to('/admin/products');
+        return redirect()->to('/admin/products/'.$product->id);
     }
 
     public function delete($id)

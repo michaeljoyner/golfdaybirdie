@@ -8,14 +8,14 @@
     </div>
     <div class="w-section argyle-divider"></div>
     <div class="w-section section section-slider">
-        <h1 class="section-heading">TOP&nbsp;SELLERS</h1>
+        <h1 class="section-heading">TOP SELLERS</h1>
         <div class="slider-div">
             <div class="w-slider slider" data-animation="slide" data-duration="500" data-infinite="1">
                 <div class="w-slider-mask slider-mask">
                     @foreach($products->chunk(9)->first() as $product)
                         <div class="w-slide slide"><img class="slide-image" src="{{ $product->smallestImageSrc() }}" alt="product image"/>
                             <h3 class="slide-heading">{{ $product->name }}</h3>
-                            <div class="slide-description">{{ $product->description }}</div>
+                            {{--<div class="slide-description">{{ $product->description }}</div>--}}
                             <a class="w-button add-button" href="/product/{{ $product->slug }}">CHECK IT OUT</a>
                         </div>
                     @endforeach

@@ -21,7 +21,17 @@ elixir(function(mix) {
             'dropzone.js',
             'dropzonemanager.js',
             'cartmanager.js',
-            'contactform.js'
+            'contactform.js',
+            'vue.js',
+            'vue-resource.js',
+            'vueconstructors.js'
         ], './public/js/all.js')
-        .version(['css/app.css', 'css/fapp.css', 'js/all.js']);
+        .scripts([
+            'jquery.js',
+            'webflow.js',
+            'vue.js',
+            'vue-resource.js',
+            'vueconstructors.js'
+        ], './public/js/fall.js')
+        .version(['css/app.css', 'css/fapp.css', 'js/all.js', 'js/fall.js']);
 });
