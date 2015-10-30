@@ -60,6 +60,13 @@ class ProductApiController extends Controller
         return response()->json($product->sizes->lists('size')->toArray());
     }
 
+    public function setPromote($id)
+    {
+        $product = Product::findOrFail($id);
+        $state = $product->togglePromoteState();
+        return response()->json(['promote' => $state]);
+    }
+
     /**
      * @param Request $request
      * @return array

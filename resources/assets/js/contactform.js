@@ -66,7 +66,7 @@
 
         formReset: function() {
             this.formEl.reset();
-            this.formEl.className = 'contact-omashu-form';
+            this.formEl.className = 'gdb-form';
         },
 
         setupErrorBox: function() {

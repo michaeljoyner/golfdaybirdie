@@ -10,7 +10,7 @@
     <script>
         WebFont.load({
             google: {
-                families: ["Open Sans:300,400,700","Bitter:400,700,400italic","Exo:300"]
+                families: ["Open Sans:300,400,500,600,700","Bitter:400,700,400italic","Exo:300"]
             }
         });
     </script>

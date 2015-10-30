@@ -5,11 +5,25 @@
 @import "front/vendor/webflowbase";
 @import "front/webflow";
 
+@import "partials/sweetalert";
+@import "partials/dropzone";
+
 @import "front/productitem";
 @import "front/productshow";
 @import "front/cartnav";
 @import "front/cartlist";
 @import "front/gdbform";
+@import "partials/contactform";
+@import "front/navbar";
+@import "front/contactpanels";
+@import "front/upcomingevents";
+@import "front/homecategories";
 
 @import "front/pages/home";
 @import "front/pages/product";
+@import "front/pages/checkout";
+@import "front/pages/about";
+
+[v-cloak] {
+  display: none;
+}

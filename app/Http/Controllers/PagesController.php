@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Announcement;
 use App\Http\FlashMessages\Flasher;
 use App\Http\Requests\CheckoutFormRequest;
 use App\Http\Requests\ContactFormRequest;
 use App\Mailing\AdminMailer;
-use App\Quotes\QuoteProduct;
-use App\Quotes\QuoteRequest;
-use App\Quotes\QuoteRequestRepo;
+use App\Orders\CartItemResolver;
 use App\Stock\Category;
 use App\Stock\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -25,18 +24,24 @@ class PagesController extends Controller
      * @var Flasher
      */
     private $flasher;
+    /**
+     * @var CartItemResolver
+     */
+    private $cartItemResolver;
 
-    public function __construct(Flasher $flasher)
+    public function __construct(Flasher $flasher, CartItemResolver $cartItemResolver)
     {
         $this->flasher = $flasher;
+        $this->cartItemResolver = $cartItemResolver;
     }
 
     public function home()
     {
-        $products = Product::all();
+        $announcements = Announcement::getPick();
+        $products = Product::promotedItems();
         $categories = Category::all();
 
-        return view('front.pages.home')->with(compact('products', 'categories'));
+        return view('front.pages.home')->with(compact('products', 'categories', 'announcements'));
     }
 
     public function about()
@@ -63,19 +68,11 @@ class PagesController extends Controller
 
     public function showCheckout()
     {
-        return view('front.pages.checkout');
+        $orderedItems = $this->getOrderedItems();
+
+        return view('front.pages.checkout')->with(compact('orderedItems'));
     }
 
-    public function handleCheckout(CheckoutFormRequest $request, QuoteRequestRepo $quoteRequestRepo)
-    {
-        $cartContents = $this->emptyCart();
-
-        $quoteRequestRepo->store($request, $cartContents);
-
-        $this->flasher->success('Thank You!', 'Thanks for your order. We will be in touch soon.');
-
-        return redirect()->to('/');
-    }
 
     public function contact(ContactFormRequest $request, AdminMailer $mailer)
     {
@@ -88,11 +85,13 @@ class PagesController extends Controller
         return redirect()->to('/');
     }
 
-    private function emptyCart()
+    private function getOrderedItems()
     {
-        $contents = Cart::content();
-        Cart::destroy();
+        $cartItems = Cart::content();
 
-        return $contents;
+        return $cartItems->map(function($item) {
+            return $this->cartItemResolver->resolve($item);
+        })->values()->all();
     }
+
 }

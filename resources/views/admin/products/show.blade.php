@@ -69,7 +69,16 @@
                         <span v-if="syncing" class="syncing-notification">syncing...</span>
                     </div>
                 </div>
-
+            </div>
+            <div id="promote">
+                <label for="promote-cb">Promote this product</label>
+                <input type="checkbox"
+                       id="promote-cb"
+                       v-model="promote"
+                       v-on="change: togglePromote"
+                       @if($product->promote) checked @endif
+                />
+                <span v-if="isSyncing === true" class="syncing-notification">syncing...</span>
             </div>
 
         </div>
@@ -86,5 +95,6 @@
     <script>
         Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#x-token').getAttribute('content');
         var sizes = new Vue(vueConstructorObjects.adminProductSizes);
+        var promoter = new Vue(vueConstructorObjects.adminProductPromote);
     </script>
 @endsection

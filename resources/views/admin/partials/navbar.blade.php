@@ -11,10 +11,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                {{--<li @if(Request::path() === 'admin') class="active" @endif ><a href="/admin">Home</a></li>--}}
+                <li @if(Request::path() === 'admin') class="active" @endif ><a href="/admin">Home</a></li>
                 <li @if(starts_with(Request::path(), 'admin/categories')) class="active" @endif><a href="/admin/categories">Categories</a></li>
                 <li @if(starts_with(Request::path(), 'admin/products')) class="active" @endif><a href="/admin/products">Products</a></li>
                 <li @if(starts_with(Request::path(), 'admin/orders')) class="active" @endif><a href="/admin/orders">Orders</a></li>
+                <li @if(starts_with(Request::path(), 'admin/announcements')) class="active" @endif><a href="/admin/announcements">Announcements</a></li>
                 <li @if(starts_with(Request::path(), 'admin/users')) class="active" @endif><a href="/admin/users">Users</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

@@ -27,14 +27,14 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = Order::where('is_archived', 0)->with('orderItems')->get();
+        $orders = Order::where('is_archived', 0)->with('orderItems')->latest()->paginate(5);
         $isArchives = false;
         return view('admin.orders.index')->with(compact('orders', 'isArchives'));
     }
 
     public function indexArchived()
     {
-        $orders = Order::where('is_archived', 1)->with('orderItems')->get();
+        $orders = Order::where('is_archived', 1)->with('orderItems')->latest()->paginate(5);
         $isArchives = true;
         return view('admin.orders.index')->with(compact('orders', 'isArchives'));
     }

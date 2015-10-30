@@ -9,10 +9,11 @@
   padding-bottom: 50px;
 
 
-  background-color: #f8f7f3;
+  background-color: $soft_green;
 
 
-  background-image: url('../../images/golf.jpg');
+
+  background-image: url('../../images/golfhole_bg.jpg');
 
 
   background-position: 50% 50%;
@@ -22,6 +23,7 @@
 
 
   background-attachment: fixed;
+
 
 
 }
@@ -65,7 +67,11 @@
 
   padding-bottom: 50px;
 
+  background-image: url('../../images/golf_events.jpg');
 
+  background-size: cover;
+
+  background-position-y: 40%;
 }
 
 
@@ -84,10 +90,10 @@
 .section.mission-section {
 
 
-  margin-top: 50px;
+  padding-top: 50px;
 
 
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 
 
   color: black;
@@ -146,6 +152,13 @@
 
   padding: 45px 31px;
 
+  @include respond-to(smalltablet) {
+    width: 100%;
+  }
+
+  @include respond-to(largetablet) {
+    width: 50%;
+  }
 
 }
 
@@ -350,6 +363,8 @@
 
   letter-spacing: 1px;
 
+  @include respond-to(largetablet) {margin-right: 0;}
+  @include respond-to(desktop) {margin-right: 0;}
 
 }
 
@@ -509,6 +524,10 @@
 
 }
 
+.section.contact-section {
+  padding-top: 50px;
+}
+
 
 .slide-heading {
 
@@ -582,7 +601,7 @@
 .add-button:hover {
 
 
-  background-color: #3ec2a5;
+  background-color: $soft_orange;
 
 
   -webkit-transform: scale(1.01);
@@ -686,6 +705,9 @@
 
   padding-bottom: 25px;
 
+  @include respond-to(phone) {width: 100%;}
+  @include respond-to(smalltablet) {width: 100%;}
+  @include respond-to(largetablet) {width: 100%;}
 
 }
 
@@ -743,26 +765,7 @@
 
   border: 6px solid #184f5e;
 
-
-}
-
-
-.category-wrapper:hover {
-
-
-  border-color: #fc6f11;
-
-
-  background-color: rgba(252, 112, 18, 0.5);
-
-
-  -webkit-transform: scale(1.02);
-
-
-  -ms-transform: scale(1.02);
-
-
-  transform: scale(1.02);
+  margin: 0 auto;
 
 
 }
@@ -813,7 +816,9 @@
   text-align: center;
 
 
-  letter-spacing: 1px;
+  letter-spacing: 0px;
+
+  text-transform: uppercase;
 
 
 }
@@ -900,6 +905,11 @@
   list-style-type: none;
 
 
+}
+
+.footer-text a, .footer-text a:visited, .footer-text a:focus {
+  color: inherit;
+  text-decoration: none;
 }
 
 
@@ -1001,8 +1011,6 @@
 .back-function {
 
 
-  height: 20px;
-
 
   margin-bottom: 10px;
 
@@ -1039,7 +1047,6 @@
   color: #184f5e;
 
 
-  line-height: 10px;
 
 
   font-style: normal;
@@ -1077,15 +1084,25 @@
 
 
 .item-main-image {
+  max-width: 100%;
+  max-height: 250px;
+  display: block;
+  margin: 0 auto;
 
 
-  position: static;
+
+
+}
+
+.product-main-img-wrapper {
+  position: relative;
 
 
   display: block;
 
 
   width: 90%;
+  max-height: 366px;
 
 
   margin-right: auto;
@@ -1095,7 +1112,6 @@
 
 
   padding: 30px;
-
 
 }
 
@@ -1118,6 +1134,7 @@
   padding-top: 50px;
 
 
+  min-height: 366px;
 
 
 }
@@ -1677,13 +1694,13 @@ ul.cart-list {
 }
 
 
-.mission-column-left {
-
-
-  padding: 30px;
-
-
-}
+//.mission-column-left {
+//
+//
+//  padding: 30px;
+//
+//
+//}
 
 
 .mission-column-right {
@@ -2253,7 +2270,7 @@ ul.cart-list {
     background-position: 71% 0px;
 
 
-    background-size: 300%;
+//    background-size: 300%;
 
 
     background-repeat: repeat;
@@ -2262,22 +2279,22 @@ ul.cart-list {
   }
 
 
-  .section.mission-section {
-
-
-    margin-top: 30px;
-
-
-    margin-bottom: 30px;
-
-
-  }
+//  .section.mission-section {
+//
+//
+//    margin-top: 30px;
+//
+//
+//    margin-bottom: 30px;
+//
+//
+//  }
 
 
   .slide {
 
 
-    display: block;
+//    display: block;
 
 
     width: 100%;
@@ -2386,6 +2403,8 @@ ul.cart-list {
 
 
   }
+
+
 
 
   .section-heading {

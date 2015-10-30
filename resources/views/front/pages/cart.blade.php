@@ -3,6 +3,7 @@
 @section('head')
     <meta id="x-token" property="CSRF-token" content="{{ Session::token() }}"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <meta name="ROBOTS" content="NOINDEX, FOLLOW"/>
 @stop
 
 @section('content')
@@ -13,8 +14,8 @@
         <ul id="cart-items" v-if="items.length" class="cart-list">
             <li v-repeat="item in items">
                 <div class="w-clearfix cart-product-wrapper">
-                    <div class="cart-wrapper cart-image"><img class="cart-image" width="120"
-                                                              src="@{{ item.images['thumb'] }}">
+                    <div class="cart-wrapper cart-image">
+                        <img class="cart-image" width="120" v-attr="src:item.images['thumb']" alt="product image"/>
                     </div>
                     <div class="cart-wrapper title">
                         <div class="cart-title">@{{ item.itemName }}</div>
@@ -47,7 +48,7 @@
                 <p class="cart-list-empty">Your cart is currently empty.</p>
             </li>
         </ul>
-        <div class="argyle-divider shortened"></div>
+        <div class="argyle-divider"></div>
         <div class="btn btn-checkout">
             <a href="/checkout">checkout</a>
         </div>

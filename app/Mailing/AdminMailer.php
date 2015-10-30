@@ -9,21 +9,12 @@
 namespace App\Mailing;
 
 
-use App\Quotes\QuoteRequest;
+
+use App\Orders\Order;
 
 class AdminMailer extends Mailer {
 
     protected $to = ['ryan@absolutesport.co.za' => 'Ryan Keipiel'];
-
-    public function notifyOfQuoteRequest($quoteRequest)
-    {
-        $from = $quoteRequest->email;
-        $subject = 'GolfBallBranding Quote Request from '.$quoteRequest->name;
-        $data = ['data' => serialize($quoteRequest)];
-        $view = 'emails.quoterequest';
-
-        $this->sendTo($this->to, $from, $subject, $view, $data);
-    }
 
     public function sendContactMessage(array $contact_message)
     {
@@ -33,6 +24,15 @@ class AdminMailer extends Mailer {
         $view = 'emails.contact';
 
         $this->sendTo($this->to, $from, $subject, $view, $data);
+    }
+
+    public function sendOrderNotification(Order $order)
+    {
+        $from = $order->customer_email;
+        $subject = 'Order from GolfDayBirdie';
+        $view = 'emails.order';
+
+        $this->sendTo($this->to, $from, $subject, $view, compact('order'));
     }
 
 }

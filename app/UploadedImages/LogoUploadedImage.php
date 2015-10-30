@@ -11,11 +11,11 @@ namespace App\UploadedImages;
 
 class LogoUploadedImage extends UploadedImage {
 
-    protected $basePath = '/useruploads/logos/';
+    protected $basePath = '/images/useruploads/logos/';
 
     protected $dimensions = [
         'thumb' => 150,
-        'main' => 900
+        'main' => 500
     ];
 
 }

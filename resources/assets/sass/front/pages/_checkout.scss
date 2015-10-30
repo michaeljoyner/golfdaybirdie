@@ -1,0 +1,58 @@
+.checkout-order {
+  font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial;
+  .checkout-heading {
+    color: $primary_blue;
+  }
+
+  .checkout-order-list {
+    padding: 20px 0;
+    list-style-type: none;
+
+    li {
+      padding-bottom: 12px;
+    }
+  }
+
+  .checkout-order-item-name {
+    text-transform: uppercase;
+  }
+
+  h1, h2 {
+    font-family: 'Bitter', Helvetica Neue, Helvetica, Arial;
+    color: $primary_blue;
+  }
+
+  .checkout-explaination-heading {
+    border-bottom: 3px solid $soft_orange;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+
+
+}
+
+.main-checkout-wrapper {
+  margin: 0 20px;
+}
+
+.upload-column {
+  h1 {
+    font-family: 'Bitter', Helvetica Neue, Helvetica, Arial;
+    font-size: 32px;
+    color: $primary_blue;
+    text-align: center;
+  }
+
+
+  #logo-dropzone {
+    font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial;
+    color: $soft_green;
+    text-align: center;
+    border: 4px solid $primary_blue;
+    padding: 10px 6px;
+    font-size: 2em;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}
+

@@ -15,6 +15,11 @@ class OrderItem extends Model
         'quantity'
     ];
 
+    public static function mostPopular()
+    {
+        return static::with('product')->groupBy('product_id')->orderByRaw('COUNT(product_id) DESC')->limit(5)->get();
+    }
+
     public function order()
     {
         return $this->belongsTo('App\Orders\Order', 'order_id');

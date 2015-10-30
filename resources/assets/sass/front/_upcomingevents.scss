@@ -1,0 +1,40 @@
+.upcoming-event {
+  color: #ffffff;
+  font-family: 'Bitter', Helvetica Neue, Helvetica, Arial;
+  padding-right: 10%;
+
+  .event-title {
+    text-transform: uppercase;
+    font-size: 21px;
+  }
+
+  .event-text {
+    font-size: 1.25em;
+    padding-left: 40px;
+    border-left: 8px solid white;
+    font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial;
+  }
+
+  .event-date {
+    padding-top: 20px;
+  }
+}
+
+.admin-announcements {
+  .announcement-wrapper {
+    width: 100%;
+    padding-right: 10%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $mid_grey;
+  }
+
+  .upcoming-event {
+    color: #333;
+    width: 60%;
+
+    .event-text {
+      border-left-color: #333;
+    }
+  }
+}

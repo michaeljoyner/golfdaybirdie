@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('image_path')->default('default.jpg');
             $table->string('quantity');
+            $table->boolean('promote')->default(0);
             $table->timestamps();
         });
     }

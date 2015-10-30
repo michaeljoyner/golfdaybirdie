@@ -1,18 +1,22 @@
 .gdb-form {
-  max-width: 500px;
+  max-width: 600px;
   margin: 30px auto;
+  @include respond-to(phone) {padding-left: 5px;}
+  @include respond-to(smalltablet) {padding-left: 5px;}
+  @include respond-to(largetablet) {padding-left: 5px;}
 
   .gdb-form-group {
-
+    width: 100%;
     label {
       display: block;
       color: $soft_green;
+      padding-left: 15px;
     }
 
     input, textarea {
-      width: 100%;
+      width: 90%;
       display: inline-block;
-      margin: 10px 15px;
+      margin: 0 15px 10px;
     }
 
     input {
@@ -31,10 +35,15 @@
       height: 3em;
       color: #ffffff;
       background: $soft_green;
-      border-radius: 12px;
+      border-radius: 0;
       text-align: center;
       margin: 20px auto;
       text-transform: uppercase;
+
+      &:hover {
+        background: $soft_orange;
+      }
     }
+
   }
 }

@@ -16,14 +16,16 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-         $this->call(UserTableSeeder::class);
+        $this->call(UserTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
+        $this->call(AnnouncementsSeeder::class);
 
         Model::reguard();
     }
 }
 
-class UserTableSeeder extends Seeder {
+class UserTableSeeder extends Seeder
+{
 
     public function run()
     {
@@ -33,7 +35,8 @@ class UserTableSeeder extends Seeder {
     }
 }
 
-class ProductsTableSeeder extends Seeder {
+class ProductsTableSeeder extends Seeder
+{
 
     public function run()
     {
@@ -45,7 +48,8 @@ class ProductsTableSeeder extends Seeder {
     }
 }
 
-class CategoriesTableSeeder extends Seeder {
+class CategoriesTableSeeder extends Seeder
+{
 
     public function run()
     {
@@ -53,8 +57,17 @@ class CategoriesTableSeeder extends Seeder {
 
         $categories = factory(Category::class, 6)->create();
 
-        foreach($categories as $category) {
+        foreach ($categories as $category) {
             factory(Product::class, 7)->create(['category_id' => $category->id]);
         }
+    }
+}
+
+class AnnouncementsSeeder extends Seeder
+{
+
+    public function run()
+    {
+        factory('App\Announcement', 5)->create();
     }
 }

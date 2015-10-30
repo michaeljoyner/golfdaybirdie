@@ -27,8 +27,11 @@ elixir(function(mix) {
             'vueconstructors.js'
         ], './public/js/all.js')
         .scripts([
+            'sweetalert.min.js',
+            'dropzone.js',
             'jquery.js',
             'webflow.js',
+            'contactform.js',
             'vue.js',
             'vue-resource.js',
             'vueconstructors.js'

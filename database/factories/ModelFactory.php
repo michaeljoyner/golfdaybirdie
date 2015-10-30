@@ -47,29 +47,14 @@ $factory->define(App\Stock\ProductVersion::class, function (Faker\Generator $fak
     ];
 });
 
-$factory->define(\App\Quotes\QuoteRequest::class, function(Faker\Generator $faker) {
+$factory->define(App\Announcement::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
-        'address' => $faker->address,
-        'phone' => $faker->phoneNumber,
-        'enquiry' => $faker->paragraphs(3, true)
+        'title' => $faker->sentence(5, false),
+        'body' => $faker->paragraph(),
+        'subscript' => $faker->sentence(),
     ];
 });
 
-$factory->define(\App\Quotes\QuoteProduct::class, function(Faker\Generator $faker) {
-    return [
-        'quote_request_id' => 1,
-        'product_name' => $faker->name,
-        'quantity' => $faker->numberBetween(12, 120)
-    ];
-});
 
-$factory->define(\App\Quotes\QuoteImage::class, function(Faker\Generator $faker) {
-    return [
-        'quote_request_id' => 1,
-        'image_path' => 'default.jpg'
-    ];
-});
 
 

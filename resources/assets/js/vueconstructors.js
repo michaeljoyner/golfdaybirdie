@@ -29,7 +29,6 @@ var vueConstructorObjects = {
             flash: function() {
                 var self = this;
                 function reset() {
-                    console.log('resetting');
                     self.$set('toShow', false);
                 }
                 this.toShow = true;
@@ -46,17 +45,23 @@ var vueConstructorObjects = {
             selectedVersion: null,
             addedToCart: false,
             displayImg: '',
-            addingToCart: false
+            addingToCart: false,
+            isReady: false
         },
         computed: {
             requiresSize: function() {
                 return this.sizes && this.sizes.length > 0;
+            },
+            imageToDisplay: function() {
+                return this.displayImg == '' ? this.defaultDisplayImg : this.displayImg;
             }
         },
         ready: function() {
             this.$set('versions', vueDataStore.versions);
             this.$set('sizes', vueDataStore.sizes);
+            this.$set('defaultDisplayImg', defaultProductImage);
             this.$set('productId', document.querySelector('#product-manager').getAttribute('data-product-id'));
+            this.$set('isReady', true);
         },
         methods: {
             setVersion: function(version) {
@@ -213,6 +218,29 @@ var vueConstructorObjects = {
                     this.editingItems.$remove(item.cartRowId);
                     this.syncingItems.$remove(item.cartRowId);
                     cartManager.sync();
+                });
+            }
+        }
+    },
+
+    adminProductPromote: {
+        el: '#promote',
+
+        data: {
+            shouldPromote: false,
+            isSyncing: false
+        },
+
+        ready: function() {
+            this.$set('product_id', document.querySelector('#product-show').getAttribute('data-product-id'));
+        },
+
+        methods: {
+            togglePromote: function() {
+                this.isSyncing = true;
+                this.$http.post('/admin/api/products/promote/' + this.product_id, {}, function(result) {
+                   this.$set('shouldPromote', result.promote);
+                    this.$set('isSyncing', false);
                 });
             }
         }

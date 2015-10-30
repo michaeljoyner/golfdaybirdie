@@ -25,6 +25,12 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
+        $this->validate($request, [
+            'id' => 'required|integer|exists:products,id',
+            'version' => 'integer|exists:product_versions,id',
+            'size' => 'integer|exists:sizes,id',
+            'quantity' => 'integer'
+        ]);
         $product = Product::with('versions', 'sizes')->findOrFail($request->id);
         $itemId = $this->generateItemId($request);
         $itemName = $this->getCartItemName($product, $request);
@@ -98,6 +104,10 @@ class CartController extends Controller
 
     public function updateRow(Request $request, $rowId)
     {
+        $this->validate($request, [
+            'item.cartRowId' => 'in:'.$rowId,
+            'item.quantity' => 'integer'
+        ]);
         $qty = $request->item['quantity'];
         Cart::update($rowId, $qty);
         return response()->json('ok');

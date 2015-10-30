@@ -18,7 +18,7 @@
             <p><span class="detail-label">Customer: </span>{{ $order->customer_name }}</p>
             <p><span class="detail-label">Contact no: </span>{{ $order->customer_phone }}</p>
             <p><span class="detail-label">Email: </span>{{ $order->customer_email }}</p>
-            <p><span class="detail-label">Delivery address</span>{{ $order->customer_address }}</p>
+            <p><span class="detail-label">Delivery address: </span>{{ $order->customer_address }}</p>
             <p class="detail-label">Additional Info</p>
             @if($order->order_query !== "")
                 <p>{{ $order->order_query }}</p>
@@ -40,6 +40,17 @@
                     @endforeach
                 </tbody>
             </table>
+        </section>
+        <section class="uploads-section">
+            <h2>Images Uploaded</h2>
+            @foreach($order->orderImages as $image)
+                <div class="order-image-box">
+                    <img src="{{ $image->smallestImageSrc() }}" alt=""/>
+                    <a href="{{ $image->originalImageSrc() }}" download>
+                        <div class="btn gbb-btn btn-blue">Download</div>
+                    </a>
+                </div>
+            @endforeach
         </section>
     </div>
 

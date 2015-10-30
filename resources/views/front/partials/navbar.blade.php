@@ -1,11 +1,18 @@
-<div class="w-nav nav-bar" data-collapse="medium" data-animation="default" data-duration="400">
-    <div class="nav-phone">
-        <span class="call-now">CALL&nbsp;NOW:</span>&nbsp;083 257 9611
-    </div>
-    <nav class="w-nav-menu nav-menu" role="navigation">
-        <a class="w-nav-link nav-link" href="/about">ABOUT</a>
-        <a class="w-nav-link nav-link" href="#">CONTACT</a>
-        <a class="w-nav-link nav-link" href="/cart">
+<div class="w-nav nav-bar">
+    <div class="main-nav">
+    @if(Request::path() === '/')
+        <div class="nav-phone">
+            <span class="call-now">CALL&nbsp;NOW:</span>&nbsp;083 257 9611
+        </div>
+    @else
+        <div class="nav-branding">
+            <a href="/"><img src="{{ asset('images/logo_web.png') }}" alt="Golf Day Birdie logo small"/></a>
+        </div>
+    @endif
+    <nav class="w-nav-menu nav-menu w-clearfix" role="navigation">
+        <a class="w-nav-link nav-link about" href="/about">ABOUT</a>
+        <a class="w-nav-link nav-link contact" href="/#contact-us">CONTACT</a>
+        <a class="w-nav-link nav-link cart" href="/cart">
             <div id="cart">
                 CART
                 <div class="cart-summary-box" v-class="show: mustShow === true" v-cloak>
@@ -14,5 +21,13 @@
                 </div>
             </div>
         </a>
+    </nav>
+    </div>
+    <nav class="small-only">
+        <ul>
+            <a href="/"><li>Home</li></a>
+            <a href="/#contact-us"><li>Contact</li></a>
+            <a href="/about"><li>About</li></a>
+        </ul>
     </nav>
 </div>

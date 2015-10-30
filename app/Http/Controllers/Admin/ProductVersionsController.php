@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\FlashMessages\Flasher;
+use App\Http\Requests\ProductVersionFormRequest;
 use App\Stock\Product;
 use App\Stock\ProductVersion;
 use Illuminate\Http\Request;
@@ -31,7 +32,7 @@ class ProductVersionsController extends Controller
         return view('admin.products.versions.create')->with(compact('version', 'product'));
     }
 
-    public function store($productId, Request $request)
+    public function store($productId, ProductVersionFormRequest $request)
     {
         $product = Product::findOrFail($productId);
 
@@ -49,7 +50,7 @@ class ProductVersionsController extends Controller
         return view('admin.products.versions.edit')->with(compact('version'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, ProductVersionFormRequest $request)
     {
         $version = ProductVersion::with('product')->findOrFail($id);
 

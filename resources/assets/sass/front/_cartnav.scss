@@ -21,8 +21,51 @@
     transform-origin: top left;
     transform: scale(0,1);
 
+    @include respond-to(phone) {
+      transform-origin: top right;
+      transform: scale(0,0);
+      height: 42px;
+      left: auto;
+      right: -11px;
+      top: 29px;
+      font-size: 12px;
+      font-weigth: 400;
+      padding: 0;
+    }
+
+    @include respond-to(smalltablet) {
+      transform-origin: top right;
+      transform: scale(0,0);
+      height: 42px;
+      left: auto;
+      right: -11px;
+      top: 29px;
+      font-size: 12px;
+      font-weigth: 400;
+      padding: 0;
+    }
+
+    @include respond-to(largetablet) {
+      transform-origin: top right;
+      transform: scale(0,0);
+      height: 50px;
+      left: auto;
+      right: -21px;
+      top: 41px;
+      font-size: 16px;
+      font-weigth: 400;
+      padding: 0;
+    }
+
     p {
       margin-bottom: 5px;
+
+      @include respond-to(phone) {
+        margin: 0;
+      }
+      @include respond-to(smalltablet) {
+        margin: 0;
+      }
     }
   }
 

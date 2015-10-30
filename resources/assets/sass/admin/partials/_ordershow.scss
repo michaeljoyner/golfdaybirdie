@@ -16,3 +16,18 @@
     padding-top: 30px;
   }
 }
+
+.order-image-box {
+  width: 120px;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid $mid_grey;
+
+  img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+}

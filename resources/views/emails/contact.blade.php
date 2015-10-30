@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <h2>Message via GBB site</h2>
+    <h2 style="color: #7ECBBB;">Golf Day Birdie Site message</h2>
     <hr/>
     <p>{{ $contact_message['enquiry'] }}</p>
     <hr/>

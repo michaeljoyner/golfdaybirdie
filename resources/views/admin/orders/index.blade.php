@@ -57,6 +57,9 @@
         @if($orders->count() < 1)
             <h3>There are no orders to show</h3>
         @endif
+        <div class="pagination">
+            {!! $orders->render() !!}
+        </div>
     </div>
 @endsection
 

@@ -3,6 +3,11 @@
 @section('head')
     <meta id="x-token" property="CSRF-token" content="{{ Session::token() }}"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    @include('front.partials.ogmetatags', [
+        'ogImage' => $product->imageSrc(),
+        'ogTitle' => 'Golf Day Birdie | '.$product->name,
+        'ogDescription' => $product->description
+    ])
 @stop
 
 @section('content')
@@ -16,10 +21,11 @@
     <div class="w-section argyle-divider"></div>
     <div class="w-section">
         <div id="product-manager" data-product-id="{{ $product->id }}" class="w-row item-row product-show-section">
-            <div class="w-col w-col-6 item-image-column">
+            <div class="w-col w-col-6 item-image-column" v-class="showit: isReady">
                 <div class="main-item-image-wrapper">
-                    <img v-if="displayImg == ''" class="item-main-image" src="{{ $product->imageSrc() }}">
-                    <img v-if="displayImg != ''" v-model="displayImg" class="item-main-image" src="@{{ displayImg }}" alt=""/>
+                    <div class="product-main-img-wrapper">
+                        <img v-model="displayImg" class="item-main-image" v-attr="src:imageToDisplay" alt=""/>
+                    </div>
                 </div>
                 <div class="thumbnail-images-wrapper">
                     <p v-if="versions.length > 0" class="thumbnail-text">Click thumbnail to see Large image</p>
@@ -29,8 +35,8 @@
                     <img class="product-version-thumb"
                          v-repeat="version in versions"
                          v-on="click: setVersion(version)"
-                         src="@{{ version.image_path }}"
-                         alt=""
+                         v-attr="src:version.image_path"
+                         alt="product thumbnail"
                     />
                 </div>
             </div>
@@ -71,6 +77,9 @@
 @endsection
 
 @section('bodyscripts')
+    <script>
+        var defaultProductImage = '{{ $product->imageSrc() }}';
+    </script>
     <script>
         Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#x-token').getAttribute('content');
         var cartManager = new Vue(vueConstructorObjects.cartManager);

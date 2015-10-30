@@ -7098,7 +7098,10 @@ form.dropzone {
   opacity: 1; }
 
 .dropzone-previews .dz-preview.dz-image-preview {
-  background: white; }
+  position: relative;
+  background: white;
+  display: inline-block;
+  margin: 3px; }
 
 .dropzone-previews .dz-preview.dz-image-preview .dz-details {
   transition: opacity 0.2s linear; }
@@ -7169,7 +7172,8 @@ form.dropzone {
   z-index: 10; }
 
 .dropzone-previews .dz-preview .dz-image img {
-  display: block; }
+  display: block;
+  margin: 0 auto; }
 
 .dropzone-previews .dz-preview.dz-success .dz-success-mark {
   -webkit-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);
@@ -7474,5 +7478,52 @@ form.dropzone {
 
 .order-show-items td:not(:first-child) {
   padding-top: 30px; }
+
+.order-image-box {
+  width: 120px;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #747575; }
+  .order-image-box img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto; }
+
+.popular-products .popular-item {
+  margin: 15px; }
+  .popular-products .popular-item img {
+    display: block;
+    max-width: 100px;
+    margin: 0 auto; }
+
+.upcoming-event {
+  color: #ffffff;
+  font-family: 'Bitter', Helvetica Neue, Helvetica, Arial;
+  padding-right: 10%; }
+  .upcoming-event .event-title {
+    text-transform: uppercase;
+    font-size: 21px; }
+  .upcoming-event .event-text {
+    font-size: 1.25em;
+    padding-left: 40px;
+    border-left: 8px solid white;
+    font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial; }
+  .upcoming-event .event-date {
+    padding-top: 20px; }
+
+.admin-announcements .announcement-wrapper {
+  width: 100%;
+  padding-right: 10%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #747575; }
+
+.admin-announcements .upcoming-event {
+  color: #333;
+  width: 60%; }
+  .admin-announcements .upcoming-event .event-text {
+    border-left-color: #333; }
 
 /*# sourceMappingURL=app.css.map */

@@ -16,7 +16,7 @@ Route::get('about', 'PagesController@about');
 Route::get('category/{slug}', 'PagesController@category');
 Route::get('product/{slug}', 'PagesController@product');
 
-Route::post('contactus', 'PagesController@contact');
+Route::post('contact', 'PagesController@contact');
 
 Route::get('cart', 'CartController@showCart');
 Route::get('checkout', 'PagesController@showCheckout');
@@ -27,6 +27,8 @@ Route::delete('cart/{rowId}', 'CartController@removeItem');
 Route::post('cart/additem', 'CartController@add');
 Route::post('cart/update/{rowId}', 'CartController@updateRow');
 Route::get('cart/remove/{itemId}', 'CartController@remove');
+
+Route::post('uploads/logos', 'LogoUploadsController@store');
 
 
 
@@ -80,9 +82,17 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::get('orders/archives/{id}', 'OrdersController@archive');
         Route::delete('orders/{id}', 'OrdersController@delete');
 
+        Route::get('announcements', 'AnnouncementsController@index');
+        Route::get('announcements/create', 'AnnouncementsController@create');
+        Route::get('announcements/{id}/edit', 'AnnouncementsController@edit');
+        Route::post('announcements', 'AnnouncementsController@store');
+        Route::post('announcements/{id}', 'AnnouncementsController@update');
+        Route::delete('announcements/{id}', 'AnnouncementsController@delete');
+
         Route::get('api/products/{productId}/sizes', 'ProductApiController@getProductSizes');
         Route::post('api/products/{id}/sizes', 'ProductApiController@syncProductSizes');
         Route::get('api/products/allproducts', 'ProductApiController@listProducts');
+        Route::post('api/products/promote/{id}', 'ProductApiController@setPromote');
         Route::get('api/products/{searchTerm}', 'ProductApiController@search');
 
     });

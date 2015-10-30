@@ -1,0 +1,179 @@
+.contact-section {
+  overflow: hidden;
+
+  .section-heading {
+    padding-bottom: 70px;
+
+    @include respond-to(phone) {padding-bottom: 20px;}
+    @include respond-to(smalltablet) {padding-bottom: 20px;}
+
+  }
+
+  position: relative;
+
+  .contact-display-panel {
+    width: 100%;
+    min-height: 420px;
+  }
+
+  .contact-form-panel {
+    width: 100%;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: .6s;
+    transform: translate3d(110%, 0, 0);
+
+    &.show {
+      transform: translate3d(0,0,0);
+    }
+
+    .close-prompt {
+      position: absolute;
+      top: 40px;
+      right: 100px;
+      color: $soft_green;
+      font-weight: 400;
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $primary_red;
+      }
+
+      @include respond-to(phone) {
+        position: static;
+        width: 100%;
+        text-align: center;
+        padding-top: 50px;
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+@keyframes shake {
+  0% {transform: rotate(0deg);}
+  20% {transform: rotate(10deg);}
+  40% {transform: rotate(-10deg);}
+  60% {transform: rotate(20deg);}
+  80% {transform: rotate(-20deg);}
+  100% {transform: rotate(0deg);}
+}
+
+
+.contact-display-panel {
+
+  .w-container {
+    padding-top: 50px;
+  }
+
+  .contact-col {
+    @include respond-to(phone) {padding: 30px 8px;}
+    @include respond-to(smalltablet) {padding: 30px 8px;}
+
+  }
+
+  .contact-col:first-child {
+    .contact-icon-box {
+      margin: 0;
+    }
+
+    .contact-detail {
+      text-align: left;
+      padding-left: 20%;
+    }
+  }
+
+  .contact-col:last-child {
+    .contact-icon-box {
+      margin: 0 0 0 auto;
+    }
+
+    .contact-panel-toggle.open-btn {
+      margin: 2em 30px 0 auto;
+    }
+  }
+
+  .contact-icon-heading {
+    font-family: 'Bitter', Helvetica Neue, Helvetica, Arial;
+    color: $soft_green;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 30px;
+    display: none;
+
+    @include respond-to(phone) {display: none;}
+    @include respond-to(smalltablet) {display: none;}
+
+  }
+
+  .contact-detail {
+    margin: 1.75em auto;
+    font-size: 1.25em;
+    font-family: 'Bitter', Helvetica Neue, Helvetica, Arial;
+    color: $soft_orange;
+    text-align: center;
+
+    @include respond-to(phone) {display: inline-block; margin: 0; vertical-align: top; margin-top: 15px;}
+    @include respond-to(smalltablet) {display: inline-block; margin: 0; vertical-align: top; margin-top: 15px;}
+
+  }
+
+  .contact-icon-box {
+    width: 80%;
+    min-height: 150px;
+    margin: 0 auto;
+
+
+    @include respond-to(phone) {min-height: 50px; display: inline-block; width: 20%;}
+    @include respond-to(smalltablet) {min-height: 50px; display: inline-block; width: 20%;}
+
+    svg {
+      display: block;
+      width: 70%;
+      height: auto;
+      max-height: 200px;
+      margin: 0 auto;
+      transition: .3s;
+
+      @include respond-to(phone) {max-height: 50px;}
+      @include respond-to(smalltablet) {max-height: 50px;}
+
+      path {
+//        fill: $primary_blue;
+        transition: .3s;
+      }
+    }
+
+    svg:hover {
+      animation: shake 1s;
+      path {
+        fill: $soft_orange;
+      }
+    }
+  }
+
+  .contact-panel-toggle.open-btn {
+    background: $soft_green;
+    color: white;
+    width: 60%;
+    padding: 5px 0;
+    text-align: center;
+    margin: 2em auto;
+    text-transform: uppercase;
+    font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial;
+    transition: .2s;
+    cursor: pointer;
+
+    @include respond-to(phone) {display: inline-block; vertical-align: top; margin: 0 0 0 20px;}
+    @include respond-to(smalltablet) {display: inline-block; vertical-align: top; margin: 0 0 0 20px;}
+
+    &:hover {
+      transform: scale(1.02);
+      background: $soft_orange;
+    }
+  }
+}

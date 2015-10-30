@@ -22,6 +22,18 @@ class Order extends Model
         return $this->hasMany('App\Orders\OrderItem', 'order_id');
     }
 
+    public function orderImages()
+    {
+        return $this->hasMany('App\Orders\OrderImage', 'order_id');
+    }
+
+    public static function mostPopularItems()
+    {
+        $popularItems = OrderItem::groupBy('product_id')->orderByRaw('COUNT(product_id) DESC')->get();
+
+        return $popularItems;
+    }
+
     public function addItems($cartItemCollection)
     {
         foreach($cartItemCollection as $item) {
@@ -36,5 +48,18 @@ class Order extends Model
         $this->save();
 
         return ! $isArchived;
+    }
+
+    public function attachImages($images)
+    {
+        if(is_array($images)) {
+            foreach($images as $image) {
+                $this->orderImages()->create(['image_path' => $image]);
+            }
+
+            return;
+        }
+
+        $this->orderImages()->create(['image_path' => $images]);
     }
 }

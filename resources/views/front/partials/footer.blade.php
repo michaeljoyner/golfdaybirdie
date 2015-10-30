@@ -13,9 +13,11 @@
         </div>
         <div class="w-col w-col-4 footer-column">
             <h3 class="footer-header">QUICK LINKS</h3>
-            <div class="footer-text"><span class="footer-link">TOP</span>
-                <br><span class="footer-link">CATEGORIES</span>
-                <br><span class="footer-link">ABOUT<br xmlns="http://www.w3.org/1999/xhtml"></span><span class="footer-link">CONTACT</span>
+            <div class="footer-text">
+                <a href="#top"><span class="footer-link">TOP</span></a>
+                <br><a href="/#categories"><span class="footer-link">CATEGORIES</span></a>
+                <br><a href="/about"><span class="footer-link">ABOUT<br></span></a>
+                <a href="/#contact-us"><span class="footer-link">CONTACT</span></a>
             </div>
         </div>
     </div>
