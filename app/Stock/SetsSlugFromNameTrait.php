@@ -18,6 +18,10 @@ trait SetsSlugFromNameTrait {
         $counter = 0;
         $this->attributes['name'] = $name;
 
+        if(isset($this->attributes['slug']) && $this->attributes['slug'] !== '') {
+            return;
+        }
+
         if($this->where('slug', Str::slug($name))->count() > 0) {
             $counter += 1;
             while($this->where('slug', Str::slug($name.$counter))->count() > 0) {

@@ -1,11 +1,38 @@
 .popular-products {
 
-  .popular-item {
-    margin: 15px;
-    img {
-      display: block;
-      max-width: 100px;
-      margin: 0 auto;
+  max-width: 450px;
+
+    .popular-products-list {
+      li {
+        display: inline-block;
+        margin: 1em;
+        max-width: 100px;
+        position: relative;
+
+        .popular-position {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+          font-size: 12px;
+          border-radius: 50%;
+          top: -10px;
+          left: -10px;
+          background: $primary_blue;
+          color: #ffffff;
+          text-align: center;
+        }
+
+        img {
+          display: block;
+          max-width: 100%;
+          margin: 0 auto;
+        }
+      }
     }
-  }
+
+}
+
+.promo-section .popular-products .popular-position {
+  display: none;
 }

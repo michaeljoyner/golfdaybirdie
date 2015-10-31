@@ -2,6 +2,7 @@
 
 namespace App\Orders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -32,6 +33,12 @@ class Order extends Model
         $popularItems = OrderItem::groupBy('product_id')->orderByRaw('COUNT(product_id) DESC')->get();
 
         return $popularItems;
+    }
+
+    public static function recentCount()
+    {
+        $count = static::where('created_at', '>' ,Carbon::now()->subWeek())->count();
+        return $count;
     }
 
     public function addItems($cartItemCollection)

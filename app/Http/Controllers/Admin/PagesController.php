@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Orders\Order;
 use App\Orders\OrderItem;
+use App\Stock\Category;
 use App\Stock\Product;
 use Illuminate\Http\Request;
 
@@ -17,6 +19,9 @@ class PagesController extends Controller
            return $item->product;
         });
         $promoted = Product::where('promote', 1)->get();
-        return view('admin.dashboard')->with(compact('promoted', 'popular'));
+        $ordersInLastWeek = Order::recentCount();
+        $totalCategories = Category::all()->count();
+        $totalProducts = Product::all()->count();
+        return view('admin.dashboard')->with(compact('promoted', 'popular', 'ordersInLastWeek', 'totalCategories', 'totalProducts'));
     }
 }

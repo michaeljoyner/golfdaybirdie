@@ -7324,6 +7324,10 @@ form.dropzone {
 .product-details-box .product-description {
   font-size: 2em; }
 
+.product-details-box #promote {
+  padding: 20px 0;
+  font-size: 1.5em; }
+
 .product-details-box .version-box {
   display: inline-block;
   max-width: 120px;
@@ -7491,12 +7495,32 @@ form.dropzone {
     display: block;
     margin: 0 auto; }
 
-.popular-products .popular-item {
-  margin: 15px; }
-  .popular-products .popular-item img {
-    display: block;
+.popular-products {
+  max-width: 450px; }
+  .popular-products .popular-products-list li {
+    display: inline-block;
+    margin: 1em;
     max-width: 100px;
-    margin: 0 auto; }
+    position: relative; }
+    .popular-products .popular-products-list li .popular-position {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      font-size: 12px;
+      border-radius: 50%;
+      top: -10px;
+      left: -10px;
+      background: #184f5e;
+      color: #ffffff;
+      text-align: center; }
+    .popular-products .popular-products-list li img {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto; }
+
+.promo-section .popular-products .popular-position {
+  display: none; }
 
 .upcoming-event {
   color: #ffffff;
@@ -7525,5 +7549,32 @@ form.dropzone {
   width: 60%; }
   .admin-announcements .upcoming-event .event-text {
     border-left-color: #333; }
+
+.stats-block .stat-card .stat-num {
+  display: block;
+  font-size: 100px;
+  text-align: center;
+  color: #7ECBBB;
+  border-bottom: 3px solid #7ECBBB; }
+
+.stats-block .stat-card .stat-name {
+  text-transform: uppercase;
+  font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial;
+  color: #184f5e;
+  margin: 0.5em;
+  font-size: 1.25em;
+  display: block;
+  text-align: center; }
+
+.dash-page-heading {
+  color: #184f5e; }
+
+.dash-section-heading {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #FC6F11; }
+
+.promo-section {
+  min-height: 450px; }
 
 /*# sourceMappingURL=app.css.map */

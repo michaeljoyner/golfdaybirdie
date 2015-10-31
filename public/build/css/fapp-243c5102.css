@@ -2007,10 +2007,22 @@ textarea.w-select {
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: #7ECBBB;
-  background-image: url("../../images/golfhole_bg.jpg");
+  background-image: url("../../images/golfhole_b.jpg");
   background-position: 50% 50%;
   background-size: cover;
   background-attachment: fixed; }
+  @media only screen and (max-width: 413px) {
+    .section.hero-section {
+      background-image: url("../../images/pages/414_golfhole_b.jpg"); } }
+  @media only screen and (min-width: 414px) and (max-width: 720px) {
+    .section.hero-section {
+      background-image: url("../../images/pages/720_golfhole_b.jpg"); } }
+  @media only screen and (min-width: 721px) and (max-width: 969px) {
+    .section.hero-section {
+      background-image: url("../../images/pages/970_golfhole_b.jpg"); } }
+  @media only screen and (min-width: 970px) and (max-width: 1199px) {
+    .section.hero-section {
+      background-image: url("../../images/pages/1200_golfhole_b.jpg"); } }
 
 .section.section-slider {
   padding-top: 50px;
@@ -4931,6 +4943,10 @@ body.stop-scrolling {
   animation-timing-function: linear;
   color: #ffffff; }
 
+.copyright a, .copyright a:hover, .copyright a:focus, .copyright a:visited {
+  color: inherit;
+  text-decoration: none; }
+
 .back-function .breadcrumb-link {
   color: #184f5e;
   text-decoration: none; }
@@ -5026,7 +5042,7 @@ body.stop-scrolling {
   color: #000000; }
 
 .mission-section {
-  background-image: url(../../images/silhouette.jpg);
+  background-image: url(../../images/pages/silhouette_b.jpg);
   background-size: cover;
   background-position-y: 100%;
   min-height: 600px; }
@@ -5036,6 +5052,18 @@ body.stop-scrolling {
   @media only screen and (min-width: 414px) and (max-width: 720px) {
     .mission-section {
       background-position-x: 100%; } }
+  @media only screen and (max-width: 413px) {
+    .mission-section {
+      background-image: url("../../images/pages/414_silhouette_b.jpg"); } }
+  @media only screen and (min-width: 414px) and (max-width: 720px) {
+    .mission-section {
+      background-image: url("../../images/pages/720_silhouette_b.jpg"); } }
+  @media only screen and (min-width: 721px) and (max-width: 969px) {
+    .mission-section {
+      background-image: url("../../images/pages/970_silhouette_b.jpg"); } }
+  @media only screen and (min-width: 970px) and (max-width: 1199px) {
+    .mission-section {
+      background-image: url("../../images/pages/1200_silhouette_b.jpg"); } }
 
 [v-cloak] {
   display: none; }

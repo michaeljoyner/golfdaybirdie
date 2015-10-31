@@ -41,6 +41,12 @@
   .product-description {
     font-size: 2em;
   }
+
+  #promote {
+    padding: 20px 0;
+    font-size: 1.5em;
+  }
+
   .version-box {
     display: inline-block;
     max-width: 120px;
@@ -61,6 +67,8 @@
     img {
       width: 100px;
     }
+
+
   }
 
   .version-box:hover .actions {
@@ -120,3 +128,4 @@
     line-height: 3;
   }
 }
+

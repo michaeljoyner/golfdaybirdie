@@ -21,5 +21,5 @@
             </div>
         </div>
     </div>
-    <div class="copyright">Webdesign by Make Your Mark</div>
+    <div class="copyright"><a href="http://mymsolutions.co.za" target="_blank">Webdesign by Make Your Mark</a></div>
 </div>
