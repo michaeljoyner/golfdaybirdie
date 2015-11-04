@@ -16,15 +16,15 @@
   background-image: url('../../images/pages/golfhole_b.jpg');
 
 
-  background-position: 50% 50%;
+//  background-position: 50% 50%;
 
 
-  background-size: cover;
+//  background-size: cover;
 
 
   background-attachment: fixed;
 
-  @include respond-to(phone) {background-image: url('../../images/pages/414_golfhole_b.jpg');}
+  @include respond-to(phone) {background-image: url('../../images/pages/720_golfhole_b.jpg');}
   @include respond-to(smalltablet) {background-image: url('../../images/pages/720_golfhole_b.jpg');}
   @include respond-to(largetablet) {background-image: url('../../images/pages/970_golfhole_b.jpg');}
   @include respond-to(desktop) {background-image: url('../../images/pages/1200_golfhole_b.jpg');}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     @section('title')
-    <title>Golfballbranding</title>
+    <title>Golf Day Birdie</title>
     @show
     @yield('head')
     <link rel="stylesheet" href="{{ elixir('css/app.css') }}"/>

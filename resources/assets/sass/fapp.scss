@@ -15,8 +15,8 @@
 @import "front/gdbform";
 @import "partials/contactform";
 @import "front/navbar";
-@import "front/contactpanels";
 @import "front/upcomingevents";
+@import "front/contactpanels";
 @import "front/homecategories";
 
 @import "front/pages/home";
@@ -24,6 +24,11 @@
 @import "front/pages/checkout";
 @import "front/pages/about";
 
+.upcoming-event .event-title {
+
+  @include respond-to(phone) {font-size: 18px; line-height: 1.2;}
+  @include respond-to(smalltablet) {font-size: 18px; line-height: 1.2;}
+}
 [v-cloak] {
   display: none;
 }

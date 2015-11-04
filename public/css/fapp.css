@@ -2008,12 +2008,10 @@ textarea.w-select {
   padding-bottom: 50px;
   background-color: #7ECBBB;
   background-image: url("../../images/pages/golfhole_b.jpg");
-  background-position: 50% 50%;
-  background-size: cover;
   background-attachment: fixed; }
   @media only screen and (max-width: 413px) {
     .section.hero-section {
-      background-image: url("../../images/pages/414_golfhole_b.jpg"); } }
+      background-image: url("../../images/pages/720_golfhole_b.jpg"); } }
   @media only screen and (min-width: 414px) and (max-width: 720px) {
     .section.hero-section {
       background-image: url("../../images/pages/720_golfhole_b.jpg"); } }
@@ -4568,6 +4566,34 @@ body.stop-scrolling {
   .nav-bar .nav-phone .call-now {
     display: none; } }
 
+.upcoming-event {
+  color: #ffffff;
+  font-family: 'Bitter', Helvetica Neue, Helvetica, Arial;
+  padding-right: 10%; }
+  .upcoming-event .event-title {
+    text-transform: uppercase;
+    font-size: 21px; }
+  .upcoming-event .event-text {
+    font-size: 1.25em;
+    padding-left: 40px;
+    border-left: 8px solid white;
+    font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial; }
+  .upcoming-event .event-date {
+    padding-top: 20px; }
+
+.admin-announcements .announcement-wrapper {
+  width: 100%;
+  padding-right: 10%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #747575; }
+
+.admin-announcements .upcoming-event {
+  color: #333;
+  width: 60%; }
+  .admin-announcements .upcoming-event .event-text {
+    border-left-color: #333; }
+
 .contact-section {
   overflow: hidden;
   position: relative; }
@@ -4770,34 +4796,6 @@ body.stop-scrolling {
     -webkit-transform: scale(1.02);
     transform: scale(1.02);
     background: #F47D32; }
-
-.upcoming-event {
-  color: #ffffff;
-  font-family: 'Bitter', Helvetica Neue, Helvetica, Arial;
-  padding-right: 10%; }
-  .upcoming-event .event-title {
-    text-transform: uppercase;
-    font-size: 21px; }
-  .upcoming-event .event-text {
-    font-size: 1.25em;
-    padding-left: 40px;
-    border-left: 8px solid white;
-    font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial; }
-  .upcoming-event .event-date {
-    padding-top: 20px; }
-
-.admin-announcements .announcement-wrapper {
-  width: 100%;
-  padding-right: 10%;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border-bottom: 1px solid #747575; }
-
-.admin-announcements .upcoming-event {
-  color: #333;
-  width: 60%; }
-  .admin-announcements .upcoming-event .event-text {
-    border-left-color: #333; }
 
 .category-wrapper {
   position: relative;
@@ -5044,10 +5042,10 @@ body.stop-scrolling {
   border-left: 10px solid #ffffff; }
   @media only screen and (max-width: 413px) {
     .mission-column-right .p {
-      font-size: 1.25em; } }
+      font-size: 1.1em; } }
   @media only screen and (min-width: 414px) and (max-width: 720px) {
     .mission-column-right .p {
-      font-size: 1.25em; } }
+      font-size: 1.1em; } }
 
 .mission-section {
   background-image: url(../../images/pages/silhouette_b.jpg);
@@ -5072,6 +5070,16 @@ body.stop-scrolling {
   @media only screen and (min-width: 970px) and (max-width: 1199px) {
     .mission-section {
       background-image: url("../../images/pages/1200_silhouette_b.jpg"); } }
+
+@media only screen and (max-width: 413px) {
+  .upcoming-event .event-title {
+    font-size: 18px;
+    line-height: 1.2; } }
+
+@media only screen and (min-width: 414px) and (max-width: 720px) {
+  .upcoming-event .event-title {
+    font-size: 18px;
+    line-height: 1.2; } }
 
 [v-cloak] {
   display: none; }
