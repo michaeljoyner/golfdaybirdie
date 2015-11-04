@@ -16,7 +16,7 @@
             <div class="footer-text">
                 <a href="#top"><span class="footer-link">TOP</span></a>
                 <br><a href="/#categories"><span class="footer-link">CATEGORIES</span></a>
-                <a href="/#contact-us"><span class="footer-link">CONTACT</span></a>
+                <br><a href="/#contact-us"><span class="footer-link">CONTACT</span></a>
             </div>
         </div>
     </div>
