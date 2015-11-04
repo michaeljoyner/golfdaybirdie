@@ -38,6 +38,7 @@
         </div>
     </div>
     <div class="w-section argyle-divider"></div>
+    @include('front.pages.about')
     <div id="categories" class="w-section section section-products">
         <h1 class="section-heading">CATEGORIES</h1>
         @foreach($categories->chunk(3) as $row)

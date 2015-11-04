@@ -10,7 +10,7 @@
         </div>
     @endif
     <nav class="w-nav-menu nav-menu w-clearfix" role="navigation">
-        <a class="w-nav-link nav-link about" href="/about">ABOUT</a>
+        <a class="w-nav-link nav-link about" href="/#categories">SHOP</a>
         <a class="w-nav-link nav-link contact" href="/#contact-us">CONTACT</a>
         <a class="w-nav-link nav-link cart" href="/cart">
             <div id="cart">
@@ -27,7 +27,7 @@
         <ul>
             <a href="/"><li>Home</li></a>
             <a href="/#contact-us"><li>Contact</li></a>
-            <a href="/about"><li>About</li></a>
+            <a href="/#categories"><li>SHOP</li></a>
         </ul>
     </nav>
 </div>

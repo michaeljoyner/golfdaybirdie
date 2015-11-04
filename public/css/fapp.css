@@ -2007,7 +2007,7 @@ textarea.w-select {
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: #7ECBBB;
-  background-image: url("../../images/golfhole_b.jpg");
+  background-image: url("../../images/pages/golfhole_b.jpg");
   background-position: 50% 50%;
   background-size: cover;
   background-attachment: fixed; }
@@ -2615,7 +2615,8 @@ ul.cart-list {
   text-transform: uppercase; }
 
 .mission-column-right {
-  padding: 30px; }
+  padding: 30px;
+  overflow: hidden; }
 
 .mission-text {
   font-family: 'Open Sans', sans-serif;
@@ -5034,12 +5035,19 @@ body.stop-scrolling {
   transform: translate3d(0, 0, 0);
   -webkit-animation: slideFromRight 1s 0s ease forwards;
   animation: slideFromRight 1s 0s ease forwards;
-  padding: 1em;
-  border-radius: 10px;
-  font-size: large;
+  padding: 0 0 0 1em;
+  font-size: 1.65em;
+  font-family: 'Bitter', Helvetica Neue, Helvetica, Arial;
   line-height: 1.6;
   font-weight: 500;
-  color: #000000; }
+  color: #ffffff;
+  border-left: 10px solid #ffffff; }
+  @media only screen and (max-width: 413px) {
+    .mission-column-right .p {
+      font-size: 1.25em; } }
+  @media only screen and (min-width: 414px) and (max-width: 720px) {
+    .mission-column-right .p {
+      font-size: 1.25em; } }
 
 .mission-section {
   background-image: url(../../images/pages/silhouette_b.jpg);
