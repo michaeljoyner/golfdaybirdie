@@ -1,4 +1,4 @@
-<div class="w-section section mission-section">
+<div id="about-us" class="w-section section mission-section">
     <h1 class="section-heading">ABOUT US</h1>
     <div class="w-container mission-container">
         <div class="w-row mission-row">

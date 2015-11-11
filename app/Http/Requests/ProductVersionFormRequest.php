@@ -24,7 +24,7 @@ class ProductVersionFormRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|max:255'
+            'version_name' => 'required|max:255'
         ];
     }
 }
