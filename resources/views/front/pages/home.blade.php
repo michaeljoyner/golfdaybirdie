@@ -23,7 +23,7 @@
                     @foreach($products as $product)
                         <div class="w-slide slide"><img class="slide-image" src="{{ $product->smallestImageSrc() }}" alt="product image"/>
                             <h3 class="slide-heading">{{ $product->name }}</h3>
-                            <a class="w-button add-button" href="/product/{{ $product->slug }}">CHECK IT OUT</a>
+                            <a class="w-button add-button" href="/product/{{ $product->slug }}">VIEW PRODUCT</a>
                         </div>
                     @endforeach
                 </div>
@@ -48,11 +48,11 @@
                         <a href="/category/{{ $category->slug }}"><div class="w-col w-col-4">
                                 <div class="category-wrapper">
                                     <div class="category-back-panel">
-                                        <p>{{ $category->products->count() }} Products</p>
+                                        <img class="category-image" src="{{ $category->smallestImageSrc() }}">
                                     </div>
                                     <div class="category-front-panel">
-                                        <img class="category-image" src="{{ $category->smallestImageSrc() }}">
                                         <h1 class="category-heading">{{ $category->name }}</h1>
+                                        <p>{{ $category->products->count() }} Products</p>
                                     </div>
                                 </div>
                             </div></a>

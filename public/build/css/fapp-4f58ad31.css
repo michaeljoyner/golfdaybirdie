@@ -2006,7 +2006,7 @@ textarea.w-select {
 .section.hero-section {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #7ECBBB;
+  background-color: rgba(28, 152, 20, 0.75);
   background-image: url("../../images/pages/golfhole_b.jpg");
   background-attachment: fixed; }
   @media only screen and (max-width: 413px) {
@@ -4499,7 +4499,7 @@ body.stop-scrolling {
   .nav-bar .small-only ul {
     list-style-type: none;
     padding: 0;
-    background: #7ECBBB;
+    background: rgba(28, 152, 20, 0.75);
     padding: 10px; }
     .nav-bar .small-only ul li {
       display: inline-block;
@@ -4805,32 +4805,53 @@ body.stop-scrolling {
     width: 100%;
     left: 0;
     top: 0;
-    bottom: 0;
-    background: #184f5e; }
-    .category-wrapper .category-back-panel p {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      text-transform: uppercase;
-      font-family: 'Bitter', Helvetica Neue, Helvetica, Arial;
-      color: #ffffff;
-      font-size: 24px; }
+    bottom: 0; }
+    .category-wrapper .category-back-panel img {
+      height: 100%;
+      width: auto;
+      margin: 0;
+      padding: 0; }
   .category-wrapper .category-front-panel {
     position: absolute;
     width: 100%;
     left: 0;
     top: 0;
     bottom: 0;
-    background: #f5f5f5;
+    background: rgba(0, 0, 0, 0.3);
     transition: .5s;
+    -webkit-transform: translate3d(0, 86%, 0);
+    transform: translate3d(0, 86%, 0); }
+    @media only screen and (max-width: 413px) {
+      .category-wrapper .category-front-panel {
+        -webkit-transform: translate3d(0, 75%, 0);
+        transform: translate3d(0, 75%, 0); } }
+    @media only screen and (min-width: 414px) and (max-width: 720px) {
+      .category-wrapper .category-front-panel {
+        -webkit-transform: translate3d(0, 75%, 0);
+        transform: translate3d(0, 75%, 0); } }
+    @media only screen and (min-width: 721px) and (max-width: 969px) {
+      .category-wrapper .category-front-panel {
+        -webkit-transform: translate3d(0, 75%, 0);
+        transform: translate3d(0, 75%, 0); } }
+    .category-wrapper .category-front-panel h1 {
+      background: #184f5e;
+      color: #ffffff;
+      padding: 10px 0;
+      margin: 0; }
+    .category-wrapper .category-front-panel p {
+      position: absolute;
+      left: 0;
+      bottom: 50%;
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: 'Bitter', Helvetica Neue, Helvetica, Arial;
+      color: #ffffff;
+      text-shadow: 2px 2px 2px #333;
+      font-size: 24px; }
+  .category-wrapper:hover .category-front-panel {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
-  .category-wrapper:hover .category-front-panel {
-    -webkit-transform: translate3d(0, -50px, 0);
-    transform: translate3d(0, -50px, 0);
-    background: #c7e8e1; }
 
 .nav-branding {
   float: left;

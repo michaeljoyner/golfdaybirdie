@@ -14,7 +14,7 @@ class CategoryUploadedImage extends UploadedImage {
     protected $basePath = '/images/adminuploads/categories/';
 
     protected $dimensions = [
-        'thumb' => 250,
+        'thumb' => 350,
         'main' => 500
     ];
 
