@@ -39,7 +39,7 @@ class PagesController extends Controller
     {
         $announcements = Announcement::getPick();
         $products = Product::promotedItems();
-        $categories = Category::all();
+        $categories = Category::orderBy('position')->get();
 
         return view('front.pages.home')->with(compact('products', 'categories', 'announcements'));
     }

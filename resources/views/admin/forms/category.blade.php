@@ -8,6 +8,10 @@
     {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
+    <label for="position">Position: </label>
+    {!! Form::number('position', null, ['class' => "form-control"]) !!}
+</div>
+<div class="form-group">
     <button class="btn gbb-btn" type="submit">{{ $submitText }}</button>
 </div>
 {!! Form::close() !!}
