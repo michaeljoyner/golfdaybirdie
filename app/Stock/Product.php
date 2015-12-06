@@ -4,10 +4,11 @@ namespace App\Stock;
 
 use App\UploadedImages\GetsImageSourcesTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use SetsSlugFromNameTrait, GetsImageSourcesTrait;
+    use SetsSlugFromNameTrait, GetsImageSourcesTrait, SoftDeletes;
 
     protected $table = 'products';
 
@@ -18,6 +19,8 @@ class Product extends Model
         'quantity',
         'image_path'
     ];
+
+    protected $dates = ['deleted_at', 'updated_at', 'created_at'];
 
     protected $fallbackImagePath = 'images/products/default.jpg';
 

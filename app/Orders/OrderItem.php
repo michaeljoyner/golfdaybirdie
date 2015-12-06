@@ -27,7 +27,7 @@ class OrderItem extends Model
 
     public function product()
     {
-        return $this->belongsTo('App\Stock\Product', 'product_id');
+        return $this->belongsTo('App\Stock\Product', 'product_id')->withTrashed();
     }
 
     public function version()
