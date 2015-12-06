@@ -26,21 +26,21 @@
                 <p>None given</p>
             @endif
         </section>
-        <section class="order-show-items">
-            <h2 class="items-title">Requested Items</h2>
-            <table class="table">
-                <tbody>
-                    @foreach($order->orderItems as $item)
-                        <tr>
-                            <td><img src="{{ $item->itemThumb() }}" alt="item thumbnail" class="item-thumb"/></td>
-                            <td class="item-name">{{ $item->fullItemName() }}</td>
-                            <td>{{ $item->getSizeText() }}</td>
-                            <td>{{ $item->quantity }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </section>
+        {{--<section class="order-show-items">--}}
+            {{--<h2 class="items-title">Requested Items</h2>--}}
+            {{--<table class="table">--}}
+                {{--<tbody>--}}
+                    {{--@foreach($order->orderItems as $item)--}}
+                        {{--<tr>--}}
+                            {{--<td><img src="{{ $item->itemThumb() }}" alt="item thumbnail" class="item-thumb"/></td>--}}
+                            {{--<td class="item-name">{{ $item->fullItemName() }}</td>--}}
+                            {{--<td>{{ $item->getSizeText() }}</td>--}}
+                            {{--<td>{{ $item->quantity }}</td>--}}
+                        {{--</tr>--}}
+                    {{--@endforeach--}}
+                {{--</tbody>--}}
+            {{--</table>--}}
+        {{--</section>--}}
         <section class="uploads-section">
             <h2>Images Uploaded</h2>
             @foreach($order->orderImages as $image)
