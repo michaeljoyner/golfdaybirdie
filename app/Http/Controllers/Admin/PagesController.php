@@ -17,6 +17,8 @@ class PagesController extends Controller
     {
         $popular = OrderItem::mostPopular()->map(function($item) {
            return $item->product;
+        })->filter(function($orderItem) {
+            return $orderItem != null;
         });
         $promoted = Product::where('promote', 1)->get();
         $ordersInLastWeek = Order::recentCount();
