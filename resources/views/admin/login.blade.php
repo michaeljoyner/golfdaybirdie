@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Golfballbranding</title>
+    <title>Golf Day Birdie</title>
     <style>
         body {
             width: 100%;
@@ -16,30 +16,43 @@
             padding-top: 20vh;
         }
 
+        .logo-img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
         form input[type=email], form input[type=password] {
             width: 100%;
             height: 32px;
             padding-left: 5px;
+            margin: 8px 0;
         }
 
         label {
             font-size: small;
             text-transform: uppercase;
             font-family: Helvetica, Ariel, sans-serif;
+            color: #7ECBBB;
         }
 
-        button {
+        button.sub {
             width: 100%;
             height: 32px;
-            background: orangered;
+            background: #7ECBBB;
             color: white;
             padding-left: 5px;
+            border: none;
+            text-transform: uppercase;
+        }
+
+        button.sub:hover {
+            background: #184f5e;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>GolfBallBranding</h1>
+        <img src="/images/logo4.png" alt="Golf day birdie logo" class="logo-img">
         @include('errors')
         @include('admin.forms.login')
     </div>
