@@ -4,6 +4,7 @@
     padding: 12px 40px;
     display: inline-block;
     font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial;
+    vertical-align: top;
 
     @include respond-to(phone) {
       width: 100%;
@@ -18,8 +19,8 @@
 
   .product-item-heading {
     text-align: center;
-    height: 70px;
-    @include respond-to(phone) {height: auto;}
+    min-height: 70px;
+    @include respond-to(phone) {height: auto; min-height: 0;}
     @include respond-to(smalltablet) {font-size: 16px; line-height: 24px;}
     @include respond-to(largetablet) {font-size: 16px; line-height: 24px;}
 
@@ -27,9 +28,10 @@
 
   .product-item-description {
     margin-bottom: 20px;
-    height: 140px;
+    min-height: 140px;
     overflow: hidden;
-    @include respond-to(phone) {height: auto;}
+    @include respond-to(phone) {height: auto; min-height: 0;}
+    @include respond-to(smalltablet) {height: auto; min-height: auto;}
 
   }
 }
