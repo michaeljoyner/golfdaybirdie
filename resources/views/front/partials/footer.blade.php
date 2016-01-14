@@ -3,13 +3,14 @@
         <div class="w-col w-col-4 footer-column">
             <h3 class="footer-header">GOT&nbsp;QUESTIONS?</h3>
             <div class="footer-text">Call or Text now: 083 257 9611
-                <br>Email: service@golfdaybirdie.com</div>
+                <br>Email: <a href="mailto:sales@golfdaybirdie.com">sales@golfdaybirdie.com</a>
+            </div>
         </div>
         <div class="w-col w-col-4 footer-column">
             <h3 class="footer-header">FIND US&nbsp;ON&nbsp;SOCIAL&nbsp;MEDIA</h3>
-            <div class="footer-text">Facebook
-                <br>Instagram
-                <br>Twitter</div>
+            <div class="footer-text">
+                <a href="https://facebook.com/golfdaybirdie/">Facebook</a>
+            </div>
         </div>
         <div class="w-col w-col-4 footer-column">
             <h3 class="footer-header">QUICK LINKS</h3>

@@ -15,7 +15,7 @@
                     <div class="contact-icon-box">
                         @include('svg.newemail')
                     </div>
-                    <p class="contact-detail">contact@golfdaybirdie.com</p>
+                    <p class="contact-detail"><a href="mailto:sales@golfdaybirdie.com">sales@golfdaybirdie.com</a></p>
                 </div>
                 <div class="w-col w-col-4 contact-col">
                     <h1 class="contact-icon-heading">send a message</h1>
