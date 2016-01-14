@@ -1,5 +1,13 @@
 @extends('front.base')
 
+@section('head')
+    @include('front.partials.ogmetatags', [
+        'ogImage' => asset('images/fb_image.png'),
+        'ogTitle' => $category->name . ' | Golf Day Birdie',
+        'ogDescription' =>  $category->description
+    ])
+@endsection
+
 @section('content')
     <div class="w-section argyle-banner about">
         <h1 class="section-heading mission">{{ $category->name }}</h1>
