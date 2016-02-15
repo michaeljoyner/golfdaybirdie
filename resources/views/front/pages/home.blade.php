@@ -18,11 +18,14 @@
     <div class="w-section section section-slider">
         <h1 class="section-heading">TOP SELLERS</h1>
         <div class="slider-div">
-            <div class="w-slider slider" data-animation="slide" data-duration="500" data-infinite="1">
+            <div class="w-slider slider" data-animation="slide" data-duration="1000" data-autoplay="1" data-delay="3000" data-infinite="1">
                 <div class="w-slider-mask slider-mask">
                     @foreach($products as $product)
-                        <div class="w-slide slide"><img class="slide-image" src="{{ $product->smallestImageSrc() }}" alt="product image"/>
-                            <h3 class="slide-heading">{{ $product->name }}</h3>
+                        <div class="w-slide slide">
+                            <a href="/product/{{ $product->slug }}">
+                                <img class="slide-image" src="{{ $product->smallestImageSrc() }}" alt="product image"/>
+                                <h3 class="slide-heading">{{ $product->name }}</h3>
+                            </a>
                             <a class="w-button add-button" href="/product/{{ $product->slug }}">VIEW PRODUCT</a>
                         </div>
                     @endforeach
@@ -51,7 +54,7 @@
                                         <img class="category-image" src="{{ $category->smallestImageSrc() }}">
                                     </div>
                                     <div class="category-front-panel">
-                                        <h1 class="category-heading">{{ $category->name }}</h1>
+                                        <h1 class="category-heading {{ $category->slug }}">{{ $category->name }}</h1>
                                         <p>{{ $category->products->count() }} Products</p>
                                     </div>
                                 </div>

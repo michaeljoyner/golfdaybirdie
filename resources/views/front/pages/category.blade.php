@@ -18,8 +18,10 @@
             <div class="w-row column-row">
                 @foreach($row as $product)
                     <div class="product-item">
-                        <img class="product-item-image" src="{{ $product->smallestImageSrc() }}" alt="product image"/>
-                        <h3 class="product-item-heading">{{ $product->name }}</h3>
+                        <a href="/product/{{ $product->slug }}">
+                            <img class="product-item-image" src="{{ $product->smallestImageSrc() }}" alt="product image"/>
+                            <h3 class="product-item-heading">{{ $product->name }}</h3>
+                        </a>
                         <p class="product-item-description">{{ $product->description }}</p>
                         <a class="w-button add-button" href="/product/{{ $product->slug }}">VIEW PRODUCT</a>
                     </div>

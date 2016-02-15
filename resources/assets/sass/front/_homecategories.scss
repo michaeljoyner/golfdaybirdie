@@ -38,6 +38,14 @@
       color: #ffffff;
       padding: 10px 0;
       margin: 0;
+
+      &.towels {
+        font-size: 22px;
+
+        @include respond-to(phone) {font-size: 14px;}
+        @include respond-to(smalltablet) {font-size: 14px;}
+        @include respond-to(largetablet) {font-size: 14px;}
+      }
     }
 
     p {
@@ -59,3 +67,4 @@
   }
 
 }
+
