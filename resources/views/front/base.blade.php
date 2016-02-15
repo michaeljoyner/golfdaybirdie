@@ -5,6 +5,7 @@
     <title>Golf Day Birdie</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ elixir('css/fapp.css') }}"/>
+    <meta name="theme-color" content="#184f5e">
     @yield('head')
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script>
