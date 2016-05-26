@@ -80,7 +80,7 @@
     ul {
       list-style-type: none;
       padding: 0;
-      background: rgba(28,152,20,.75);
+      background: rgba(24,79,94,.9);
       padding: 10px;
 
       li {
@@ -89,7 +89,8 @@
         text-transform: uppercase;
         text-align: center;
         width: 32%;
-        color: $primary_blue;
+        color: $soft_green;
+        font-family: 'Bitter', serif;
         font-weight: 700;
       }
     }

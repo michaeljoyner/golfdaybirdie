@@ -26,6 +26,10 @@
     transition: .6s;
     transform: translate3d(110%, 0, 0);
 
+    .gdb-form {
+     margin-bottom: 5px;
+    }
+
     &.show {
       transform: translate3d(0,0,0);
     }
@@ -47,8 +51,8 @@
         position: static;
         width: 100%;
         text-align: center;
-        padding-top: 50px;
-        font-size: 2em;
+        padding-top: 0;
+        font-size: 1em;
       }
     }
   }
@@ -68,6 +72,9 @@
 
   .w-container {
     padding-top: 50px;
+
+    @include respond-to(phone) { padding-top: 5px;}
+    @include respond-to(smalltablet) { padding-top: 5px;}
   }
 
   .contact-col {
@@ -84,6 +91,9 @@
     .contact-detail {
       text-align: left;
       padding-left: 20%;
+
+      @include respond-to(phone) { padding-left: 5px;}
+      @include respond-to(smalltablet) { padding-left: 5px;}
     }
   }
 
