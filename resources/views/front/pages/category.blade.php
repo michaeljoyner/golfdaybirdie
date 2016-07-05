@@ -19,7 +19,7 @@
                 @foreach($row as $product)
                     <div class="product-item">
                         <a href="/product/{{ $product->slug }}">
-                            <img class="product-item-image" src="{{ $product->smallestImageSrc() }}" alt="product image"/>
+                            <img class="product-item-image" src="{{ $product->smallestImageSrc() }}" alt="{{ $product->name }}"/>
                             <h3 class="product-item-heading">{{ $product->name }}</h3>
                         </a>
                         <p class="product-item-description">{{ $product->description }}</p>

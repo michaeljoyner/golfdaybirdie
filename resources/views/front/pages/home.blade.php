@@ -23,7 +23,7 @@
                     @foreach($products as $product)
                         <div class="w-slide slide">
                             <a href="/product/{{ $product->slug }}">
-                                <img class="slide-image" src="{{ $product->smallestImageSrc() }}" alt="product image"/>
+                                <img class="slide-image" src="{{ $product->smallestImageSrc() }}" alt="{{ $product->name }}"/>
                                 <h3 class="slide-heading">{{ $product->name }}</h3>
                             </a>
                             <a class="w-button add-button" href="/product/{{ $product->slug }}">VIEW PRODUCT</a>
@@ -51,7 +51,7 @@
                         <a href="/category/{{ $category->slug }}"><div class="w-col w-col-4">
                                 <div class="category-wrapper">
                                     <div class="category-back-panel">
-                                        <img class="category-image" src="{{ $category->smallestImageSrc() }}">
+                                        <img class="category-image" src="{{ $category->smallestImageSrc() }}" alt="{{ $category->name }}">
                                     </div>
                                     <div class="category-front-panel">
                                         <h1 class="category-heading {{ $category->slug }}">{{ $category->name }}</h1>

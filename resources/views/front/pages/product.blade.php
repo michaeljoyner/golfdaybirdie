@@ -24,7 +24,7 @@
             <div class="w-col w-col-6 item-image-column" v-class="showit: isReady">
                 <div class="main-item-image-wrapper">
                     <div class="product-main-img-wrapper">
-                        <img v-model="displayImg" class="item-main-image" v-attr="src:imageToDisplay" alt=""/>
+                        <img v-model="displayImg" class="item-main-image" v-attr="src:imageToDisplay" alt="{{ $product->name }}"/>
                     </div>
                 </div>
                 <div class="thumbnail-images-wrapper">
