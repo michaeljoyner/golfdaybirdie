@@ -19,7 +19,7 @@
                 </div>
                 <div class="w-col w-col-4 contact-col">
                     <h1 class="contact-icon-heading">send a message</h1>
-                    <div class="contact-icon-box">
+                    <div class="contact-icon-box contact-panel-toggle">
                         @include('svg.newmessage')
                     </div>
                     <div class="contact-panel-toggle open-btn">Send message now</div>
