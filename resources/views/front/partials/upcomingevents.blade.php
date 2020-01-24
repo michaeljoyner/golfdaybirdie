@@ -1,4 +1,5 @@
 <div class="w-container">
+    @if($announcements->count() > 1)
     <div class="w-row column-row">
         @if($announcements->count() > 1)
         <div class="w-col w-col-6 upcoming-event">
@@ -19,4 +20,5 @@
             </div>
         @endif
     </div>
+    @endif
 </div>
