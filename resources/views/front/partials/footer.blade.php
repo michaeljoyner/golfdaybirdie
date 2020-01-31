@@ -3,7 +3,7 @@
         <div class="w-col w-col-4 footer-column">
             <h3 class="footer-header">GOT&nbsp;QUESTIONS?</h3>
             <div class="footer-text">Call or Text now: 083 257 9611
-                <br>Email: <a href="mailto:sales@golfdaybirdie.co.za">sales@golfdaybirdie.co.za</a>
+                <br>Email: <a href="mailto:ryan@absolutesport.co.za">ryan@absolutesport.co.za</a>
             </div>
         </div>
         <div class="w-col w-col-4 footer-column">
