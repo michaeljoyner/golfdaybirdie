@@ -14,7 +14,7 @@ use App\Orders\Order;
 
 class AdminMailer extends Mailer {
 
-    protected $to = [['ryan@absolutesport.co.za' => 'Ryan Keipiel', 'sales@golfdaybirdie.co.za' => 'Sales Golf Day Birdie']];
+    protected $to = ['ryan@absolutesport.co.za', 'sales@golfdaybirdie.co.za'];
 
     public function sendContactMessage(array $contact_message)
     {
