@@ -66,7 +66,7 @@
                          class="w-button add-button item"
                          v-class="disabled: requiresSize && ! selectedSize"
                     >
-                        ADD TO CART
+                        ADD TO QUOTE
                         <span v-if="addingToCart" class="spinner"><i class="fa fa-spinner fa-spin"></i></span>
                     </div>
                 </div>

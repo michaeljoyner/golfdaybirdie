@@ -14,7 +14,7 @@
         <a class="w-nav-link nav-link contact" href="/#contact-us">CONTACT</a>
         <a class="w-nav-link nav-link cart" href="/cart">
             <div id="cart">
-                CART
+                QUOTE
                 <div class="cart-summary-box" v-class="show: mustShow === true" v-cloak>
                     <p>Products: <span class="cart-product-count">@{{ summary.products }}</span></p>
                     <p>Total items: <span class="cart-item-count">@{{ summary.items }}</span></p>
